@@ -1,0 +1,60 @@
+import Link from "next/link";
+import { PageShell } from "@/components/layout/PageShell";
+import { FAQSection } from "@/components/ui/FAQSection";
+import { PageJsonLd } from "@/components/seo/PageJsonLd";
+import type { ContentPage } from "@/data/content-types";
+import type { Crumb } from "@/components/ui/Breadcrumbs";
+import { enrichContentPageLinks, type ContentLinkKind } from "@/data/related-links";
+
+export function ContentPageView({
+  page,
+  hubLabel,
+  hubHref,
+  breadcrumbs,
+  linkKind,
+}: {
+  page: ContentPage;
+  hubLabel: string;
+  hubHref: string;
+  breadcrumbs: Crumb[];
+  linkKind?: ContentLinkKind;
+}) {
+  const enriched = linkKind ? enrichContentPageLinks(page, linkKind) : page;
+  const relatedLinks = enriched.relatedLinks ?? [];
+
+  return (
+    <>
+      <PageJsonLd breadcrumbs={breadcrumbs} faqs={enriched.faqs.length ? enriched.faqs : undefined} />
+      <PageShell title={enriched.h1} breadcrumbs={breadcrumbs}>
+        {enriched.content.map((p, i) => (
+          <p key={i} className="mb-4 text-[#374151] leading-relaxed">
+            {p}
+          </p>
+        ))}
+
+        {relatedLinks.length > 0 && (
+          <>
+            <h2 className="mt-8 text-xl font-bold text-[#1E3A5F]">Related Resources</h2>
+            <ul className="mt-4 space-y-2">
+              {relatedLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-[#0E7490] hover:underline">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {enriched.faqs.length > 0 && <FAQSection faqs={enriched.faqs} />}
+
+        <div className="mt-10">
+          <Link href={hubHref} className="font-semibold text-[#B8860B] hover:underline">
+            ← Back to {hubLabel}
+          </Link>
+        </div>
+      </PageShell>
+    </>
+  );
+}
