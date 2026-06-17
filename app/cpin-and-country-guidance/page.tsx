@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
+import { articleSchema } from "@/lib/schema";
 
 export const metadata = createMetadata({
   title: "CPIN & Country Guidance: Expert Evidence Guide | UK Immigration",
@@ -38,7 +39,14 @@ export default function CpinCountryGuidancePage() {
 
   return (
     <>
-      <PageJsonLd breadcrumbs={crumbs} />
+      <PageJsonLd
+        breadcrumbs={crumbs}
+        extra={articleSchema({
+          headline: "CPIN & Country Guidance: A Guide for UK Immigration Solicitors Instructing Experts",
+          description: metadata.description as string,
+          path: "/cpin-and-country-guidance",
+        })}
+      />
       <PageShell
         title="CPIN & Country Guidance: A Guide for UK Immigration Solicitors Instructing Experts"
         subtitle="Document hierarchy, expert role, and when to challenge Home Office country policy."

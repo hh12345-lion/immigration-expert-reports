@@ -2,7 +2,11 @@ export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
   "https://www.immigrationexpertreports.com";
 export const SITE_NAME = "Immigration Expert Reports";
-export const SITE_EMAIL = "info@immigrationexpertreports.com";
+export const SITE_EMAIL = "cases@immigrationexpertreports.com";
+export const SITE_REGION = "United Kingdom";
+/** Short scope line for footers and contact — not a site-wide banner */
+export const SITE_SCOPE_LINE =
+  "Expert report guidance and instruction for UK immigration and asylum tribunal proceedings only (England, Wales, Scotland, and Northern Ireland).";
 export const LINKEDIN_URL =
   "https://www.linkedin.com/company/immigrationexpertreports";
 

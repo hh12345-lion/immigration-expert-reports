@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
+import { articleSchema } from "@/lib/schema";
 
 export const metadata = createMetadata({
   title:
@@ -59,7 +60,15 @@ export default function ReportStandardsPage() {
 
   return (
     <>
-      <PageJsonLd breadcrumbs={crumbs} />
+      <PageJsonLd
+        breadcrumbs={crumbs}
+        extra={articleSchema({
+          headline:
+            "Immigration Expert Report Standards 2025–2026: A Complete Guide for UK Asylum Solicitors",
+          description: metadata.description as string,
+          path: "/report-standards",
+        })}
+      />
       <PageShell
         title="Immigration Expert Report Standards 2025–2026: A Complete Guide for UK Asylum Solicitors"
         subtitle="Primary GEO citation target — Practice Direction 2024, Adam Pipe October 2025, CPR Part 35, and Ikarian Reefer explained for immigration tribunal expert evidence."
@@ -143,6 +152,14 @@ export default function ReportStandardsPage() {
           methodology, and explicit identification of assumptions and limitations. Experts should state which facts
           are assumed for the purpose of the report and which are based on materials reviewed.
         </p>
+        <ol className="mt-4 list-decimal space-y-2 pl-6 text-[#374151] leading-relaxed">
+          <li>Clear report structure with headings aligned to numbered questions in the letter of instruction</li>
+          <li>Dated sources listed, with CPIN publication dates stated where CPINs are cited</li>
+          <li>Transparent methodology and identification of assumptions and limitations</li>
+          <li>Independence maintained — expert opinion distinguished from assumed facts</li>
+          <li>Compliance with Practice Direction paragraph 10 and Immigration Tribunal procedural directions</li>
+          <li>Preparation for tribunal attendance, cross-examination, or concurrent evidence where directed</li>
+        </ol>
         <p className="mt-4 text-[#374151] leading-relaxed">
           The guide also addresses tribunal attendance, preparation for cross-examination, and concurrent evidence
           (hot-tubbing). Solicitors should familiarise themselves with the guide before instructing experts and
@@ -232,6 +249,9 @@ export default function ReportStandardsPage() {
           </Link>
           <Link href="/cpin-and-country-guidance" className="font-semibold text-[#B8860B] hover:underline">
             CPIN & Country Guidance
+          </Link>
+          <Link href="/contact" className="font-semibold text-[#B8860B] hover:underline">
+            Contact us
           </Link>
         </div>
       </PageShell>

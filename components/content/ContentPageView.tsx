@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { FAQSection } from "@/components/ui/FAQSection";
@@ -12,12 +13,14 @@ export function ContentPageView({
   hubHref,
   breadcrumbs,
   linkKind,
+  children,
 }: {
   page: ContentPage;
   hubLabel: string;
   hubHref: string;
   breadcrumbs: Crumb[];
   linkKind?: ContentLinkKind;
+  children?: ReactNode;
 }) {
   const enriched = linkKind ? enrichContentPageLinks(page, linkKind) : page;
   const relatedLinks = enriched.relatedLinks ?? [];
@@ -31,6 +34,8 @@ export function ContentPageView({
             {p}
           </p>
         ))}
+
+        {children}
 
         {relatedLinks.length > 0 && (
           <>

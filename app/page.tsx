@@ -61,6 +61,11 @@ export default function HomePage() {
             generic country policy; independent expert reports address the appellant&apos;s specific profile with dated
             primary sources and Practice Direction 2024 compliance.
           </p>
+          <p className="mt-4 max-w-3xl text-sm text-[#374151]/90 leading-relaxed">
+            All guidance on this site relates to expert evidence in United Kingdom proceedings — the Immigration and
+            Asylum Chamber, Upper Tribunal (Immigration and Asylum Chamber), and related UK appeals. We do not advise
+            on immigration matters outside the UK.
+          </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {

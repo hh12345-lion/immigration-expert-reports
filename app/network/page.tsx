@@ -3,6 +3,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { networkSites } from "@/data/network-sites";
+import { SITE_SCOPE_LINE } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Immigration Expert Network Directory | Country & Thematic Expert Sites",
@@ -22,11 +23,12 @@ export default function NetworkPage() {
         subtitle="Country-specific asylum profiles and thematic expert reports live on sibling network sites. This hub links out with descriptive anchor text — no country content is published on this domain."
         breadcrumbs={crumbs}
       >
-        <p className="mb-8 text-[#374151] leading-relaxed">
-          immigrationexpertreports.com is the network master hub. It owns report standards, instruction process, report
-          type taxonomy, and tribunal procedure. Use the directory below to find the right specialist site for each
-          case type and country.
+        <p className="mb-4 text-[#374151] leading-relaxed">
+          immigrationexpertreports.com is the network master hub for United Kingdom immigration tribunal expert
+          evidence. It owns report standards, instruction process, report type taxonomy, and tribunal procedure. Use
+          the directory below to find the right specialist site for each UK case type and country.
         </p>
+        <p className="mb-8 text-sm text-[#374151]/90 leading-relaxed">{SITE_SCOPE_LINE}</p>
 
         <div className="grid gap-6 sm:grid-cols-2">
           {networkSites.map((site) => (

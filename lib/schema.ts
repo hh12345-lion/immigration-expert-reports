@@ -103,12 +103,28 @@ export function articleSchema(opts: {
   path: string;
 }) {
   return {
-    "@context": "https://schema.org",
     "@type": "Article",
     headline: opts.headline,
     description: opts.description,
     url: `${SITE_URL}${opts.path}`,
+    inLanguage: "en-GB",
     author: { "@id": `${SITE_URL}/#organization` },
     publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
+export function servicesCatalogSchema(
+  items: { slug: string; title: string; description: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": items.map((s) => ({
+      "@type": "Service",
+      "@id": `${SITE_URL}/services#${s.slug}`,
+      name: s.title,
+      description: s.description,
+      provider: { "@id": `${SITE_URL}/#organization` },
+      areaServed: { "@type": "Country", name: "United Kingdom" },
+    })),
   };
 }

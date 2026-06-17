@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
 import { join } from "path";
-import { SITE_URL, LINKEDIN_URL } from "../constants";
+import { SITE_URL, LINKEDIN_URL, SITE_EMAIL } from "../constants";
 import { buildPublicUrlInventory } from "./publicUrlInventory";
 import { SLUG_REDIRECTS } from "./slug-redirects";
 import { reportTypes } from "../../data/report-types";
@@ -18,6 +18,46 @@ const REDIRECT_ONLY_PATHS = ["/faq", "/fees", "/experts"] as const;
 
 export function verifySeoArchitecture(): ArchIssue[] {
   const issues: ArchIssue[] = [];
+
+  if (SITE_EMAIL !== "cases@immigrationexpertreports.com") {
+    issues.push({
+      level: "error",
+      message: `SITE_EMAIL should be cases@immigrationexpertreports.com (got ${SITE_EMAIL})`,
+    });
+  }
+
+  const footerPath = join(process.cwd(), "components", "layout", "Footer.tsx");
+  const footerSource = readFileSync(footerPath, "utf-8");
+  if (!footerSource.includes("United Kingdom") && !footerSource.includes("SITE_SCOPE_LINE")) {
+    issues.push({ level: "error", message: "Footer missing UK region scope" });
+  }
+
+  for (const [file, path] of [
+    ["app/report-standards/page.tsx", "/report-standards"],
+    ["app/cpin-and-country-guidance/page.tsx", "/cpin-and-country-guidance"],
+    ["app/what-is-an-immigration-expert-report/page.tsx", "/what-is-an-immigration-expert-report"],
+  ] as const) {
+    const src = readFileSync(join(process.cwd(), file), "utf-8");
+    if (!src.includes("articleSchema")) {
+      issues.push({ level: "error", message: `${path} missing Article JSON-LD (articleSchema)` });
+    }
+  }
+
+  const servicesSrc = readFileSync(join(process.cwd(), "app", "services", "page.tsx"), "utf-8");
+  if (!servicesSrc.includes("servicesCatalogSchema")) {
+    issues.push({ level: "error", message: "/services missing Service catalog JSON-LD" });
+  }
+
+  const persecutionSrc = readFileSync(
+    join(process.cwd(), "app", "report-types", "[slug]", "page.tsx"),
+    "utf-8"
+  );
+  if (!persecutionSrc.includes('id="hj-iran"') || !persecutionSrc.includes('id="rt-zimbabwe"')) {
+    issues.push({
+      level: "error",
+      message: "Persecution report type missing GEO anchors hj-iran and rt-zimbabwe",
+    });
+  }
 
   if (SITE_URL !== "https://www.immigrationexpertreports.com") {
     issues.push({
@@ -129,7 +169,7 @@ export function verifySeoArchitecture(): ArchIssue[] {
   const termsWithoutLinks = getGlossaryTermsWithLinks().filter((t) => !t.link).length;
   if (termsWithoutLinks > 0) {
     issues.push({
-      level: "warn",
+      level: "error",
       message: `${termsWithoutLinks} glossary terms missing outbound internal links`,
     });
   }

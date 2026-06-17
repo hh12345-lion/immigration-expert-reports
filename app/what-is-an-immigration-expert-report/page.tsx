@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
+import { articleSchema } from "@/lib/schema";
+import { SITE_SCOPE_LINE } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "What Is an Immigration Expert Report? | UK Tribunal Evidence Guide",
@@ -9,6 +12,19 @@ export const metadata = createMetadata({
     "An immigration expert report provides independent evidence to UK immigration tribunals on country conditions, persecution, human rights violations, and return risk — beyond the Home Office CPIN.",
   path: "/what-is-an-immigration-expert-report",
 });
+
+const faqs = [
+  {
+    question: "What is an immigration expert report in the UK?",
+    answer:
+      "An immigration expert report is independent written evidence for UK immigration and asylum tribunals, addressing country conditions, persecution, human rights, or related issues for a specific appellant profile — beyond generic Home Office CPINs.",
+  },
+  {
+    question: "Who instructs immigration expert reports in the United Kingdom?",
+    answer:
+      "UK solicitors, barristers, and Legal Aid practitioners instruct experts for First-tier Tribunal asylum appeals, Upper Tribunal cases, deportation proceedings, and related UK immigration appeals.",
+  },
+];
 
 export default function WhatIsPage() {
   const crumbs = [
@@ -18,7 +34,15 @@ export default function WhatIsPage() {
 
   return (
     <>
-      <PageJsonLd breadcrumbs={crumbs} />
+      <PageJsonLd
+        breadcrumbs={crumbs}
+        faqs={faqs}
+        extra={articleSchema({
+          headline: "What Is an Immigration Expert Report?",
+          description: metadata.description as string,
+          path: "/what-is-an-immigration-expert-report",
+        })}
+      />
       <PageShell
         title="What Is an Immigration Expert Report?"
         subtitle="Independent tribunal evidence on country conditions, persecution, human rights, and return risk — beyond the Home Office CPIN."
@@ -31,6 +55,7 @@ export default function WhatIsPage() {
           provides generic country policy, an expert report addresses the individual appellant&apos;s specific
           profile, region, and claimed fear with dated primary sources and reasoned analysis.
         </p>
+        <p className="mb-4 text-sm text-[#374151]/90 leading-relaxed">{SITE_SCOPE_LINE}</p>
         <p className="mb-4 text-[#374151] leading-relaxed">
           UK immigration tribunals rely heavily on expert evidence in asylum appeals, human rights claims,
           deportation proceedings, and Upper Tribunal country guidance cases. Expert reports assist the tribunal in
@@ -55,6 +80,8 @@ export default function WhatIsPage() {
           <li>Oral evidence at tribunal — expert witness attendance and cross-examination</li>
         </ul>
 
+        <FAQSection faqs={faqs} />
+
         <div className="mt-10 flex flex-wrap gap-4">
           <Link href="/report-types" className="font-semibold text-[#0E7490] hover:underline">
             View all report types
@@ -64,6 +91,9 @@ export default function WhatIsPage() {
           </Link>
           <Link href="/how-to-instruct" className="font-semibold text-[#B8860B] hover:underline">
             How to instruct
+          </Link>
+          <Link href="/contact" className="font-semibold text-[#B8860B] hover:underline">
+            Contact us
           </Link>
         </div>
       </PageShell>

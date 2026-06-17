@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
-import { JsonLd } from "@/components/ui/JsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { articleSchema } from "@/lib/schema";
 import { guides, getGuide } from "@/data/guides";
@@ -38,9 +37,9 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
 
   return (
     <>
-      <PageJsonLd breadcrumbs={crumbs} />
-      <JsonLd
-        data={articleSchema({
+      <PageJsonLd
+        breadcrumbs={crumbs}
+        extra={articleSchema({
           headline: guide.h1,
           description: guide.metaDescription,
           path: `/guides/${slug}`,
