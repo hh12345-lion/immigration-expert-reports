@@ -31,19 +31,19 @@ export default function CaseTypesPage() {
           }))}
         />
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/report-types" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/report-types" className="font-semibold text-[#4F8FFF] hover:underline">
             View report types
           </Link>
-          <Link href="/report-standards" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/report-standards" className="font-semibold text-[#4F8FFF] hover:underline">
             Report standards
           </Link>
-          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#4F8FFF] hover:underline">
             CPIN & Country Guidance
           </Link>
-          <Link href="/how-to-instruct" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/how-to-instruct" className="font-semibold text-[#4F8FFF] hover:underline">
             How to instruct
           </Link>
-          <Link href="/contact" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#4F8FFF] hover:underline">
             Contact us
           </Link>
         </div>

@@ -23,70 +23,62 @@ export default function NetworkPage() {
         subtitle="Country-specific asylum profiles and thematic expert reports live on sibling network sites. This hub links out with descriptive anchor text — no country content is published on this domain."
         breadcrumbs={crumbs}
       >
-        <p className="mb-4 text-[#374151] leading-relaxed">
+        <p className="mb-4 leading-relaxed text-body">
           immigrationexpertreports.com is the network master hub for United Kingdom immigration tribunal expert
           evidence. It owns report standards, instruction process, report type taxonomy, and tribunal procedure. Use
           the directory below to find the right specialist site for each UK case type and country.
         </p>
-        <p className="mb-8 text-sm text-[#374151]/90 leading-relaxed">{SITE_SCOPE_LINE}</p>
+        <p className="mb-8 text-sm leading-relaxed text-muted">{SITE_SCOPE_LINE}</p>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="divide-y divide-border border-y border-border">
           {networkSites.map((site) => (
-            <article
-              key={site.url}
-              className="flex min-w-0 flex-col rounded-[8px] border border-[#CBD5E1] bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.08)]"
-            >
-              <h2 className="text-lg font-bold text-[#1E3A5F]">{site.name}</h2>
-              <p className="mt-1 text-xs font-medium text-[#B8860B]">{site.role}</p>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-[#374151]">{site.description}</p>
-              <div className="mt-4 flex flex-col gap-2">
-                <a
-                  href={site.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center text-sm font-semibold text-[#0E7490] hover:underline"
-                >
-                  {site.anchorText} →
-                </a>
-                <Link
-                  href={site.reportTypeHref}
-                  className="text-xs text-[#374151] hover:text-[#0E7490] hover:underline"
-                >
-                  Related report type
-                </Link>
+            <article key={site.url} className="grid gap-3 py-6 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] md:gap-8">
+              <div>
+                <h2 className="font-display text-lg font-bold text-ink">{site.name}</h2>
+                <p className="font-display mt-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-signal">
+                  {site.role}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm leading-relaxed text-body">{site.description}</p>
+                <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
+                  <a
+                    href={site.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-display inline-flex min-h-[44px] items-center text-[0.7rem] font-bold uppercase tracking-[0.1em] text-signal hover:text-ink"
+                  >
+                    {site.anchorText} →
+                  </a>
+                  <Link href={site.reportTypeHref} className="text-xs text-muted hover:text-signal hover:underline">
+                    Related report type
+                  </Link>
+                </div>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="mt-12 flex flex-wrap gap-4">
-          <Link href="/report-types/country-condition-reports" className="font-semibold text-[#0E7490] hover:underline">
-            Country condition reports
-          </Link>
-          <Link href="/report-types/persecution-analysis-reports" className="font-semibold text-[#0E7490] hover:underline">
-            Persecution analysis reports
-          </Link>
-          <Link href="/report-types/human-rights-violation-reports" className="font-semibold text-[#0E7490] hover:underline">
-            Human rights violation reports
-          </Link>
-          <Link href="/report-types/cpin-challenge-reports" className="font-semibold text-[#0E7490] hover:underline">
-            CPIN challenge reports
-          </Link>
-          <Link href="/report-types" className="font-semibold text-[#B8860B] hover:underline">
-            All report types
-          </Link>
-          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#B8860B] hover:underline">
-            CPIN & Country Guidance
-          </Link>
-          <Link href="/report-standards" className="font-semibold text-[#B8860B] hover:underline">
-            Report standards
-          </Link>
-          <Link href="/how-to-instruct" className="font-semibold text-[#B8860B] hover:underline">
-            How to instruct
-          </Link>
-          <Link href="/contact" className="font-semibold text-[#B8860B] hover:underline">
-            Contact us
-          </Link>
+        <div className="mt-12 flex flex-wrap gap-x-5 gap-y-2">
+          {[
+            { href: "/report-types/country-condition-reports", label: "Country condition reports" },
+            { href: "/report-types/persecution-analysis-reports", label: "Persecution analysis" },
+            { href: "/report-types/human-rights-violation-reports", label: "Human rights reports" },
+            { href: "/report-types/cpin-challenge-reports", label: "CPIN challenges" },
+            { href: "/report-types", label: "All report types" },
+            { href: "/cpin-and-country-guidance", label: "CPIN & Country Guidance" },
+            { href: "/report-standards", label: "Report standards" },
+            { href: "/how-to-instruct", label: "How to instruct" },
+            { href: "/contact", label: "Contact" },
+          ].map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="font-display text-[0.7rem] font-bold uppercase tracking-[0.1em] text-signal hover:text-ink"
+            >
+              {l.label}
+            </Link>
+          ))}
         </div>
       </PageShell>
     </>

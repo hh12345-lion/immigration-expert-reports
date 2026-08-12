@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { appendRow, isGoogleSheetsConfigured } from "@/lib/google-sheets";
+import { appendRowWithRetry, isGoogleSheetsConfigured } from "@/lib/google-sheets";
 import {
   buildLeadWebhookPayload,
   getLeadWebhookUrl,
@@ -16,10 +16,17 @@ export async function POST(request: Request) {
   const sheetsConfigured = isGoogleSheetsConfigured();
 
   if (!sheetsConfigured && !webhookUrl) {
+    const missing: string[] = [];
+    if (!process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL?.trim()) missing.push("GOOGLE_SERVICE_ACCOUNT_EMAIL");
+    if (!process.env.GOOGLE_PRIVATE_KEY?.trim()) missing.push("GOOGLE_PRIVATE_KEY");
+    if (!process.env.GOOGLE_SHEET_ID?.trim()) missing.push("GOOGLE_SHEET_ID");
+    if (!webhookUrl) missing.push("Lead_notification_url");
+
     return NextResponse.json(
       {
         error:
-          "Lead storage not configured. Set Google Sheets env vars and/or Lead_notification_url.",
+          "Lead storage not configured. Add Google Sheets vars and/or Lead_notification_url to .env.local (local) or Netlify env (production), then restart the server.",
+        missing,
       },
       { status: 503 }
     );
@@ -35,6 +42,7 @@ export async function POST(request: Request) {
   const fullName = sanitize(body.fullName ?? "");
   const email = (body.email ?? "").toLowerCase().trim();
   const phone = sanitize(body.phone ?? "");
+  const summary = sanitize(body.summary ?? "");
 
   if (!fullName || !email) {
     return NextResponse.json({ error: "fullName and email are required" }, { status: 400 });
@@ -44,6 +52,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
   }
 
+  // Column order must match LEAD_SHEET_COLUMNS in lib/submit-lead.ts
   const row = [
     new Date().toISOString(),
     fullName,
@@ -54,16 +63,20 @@ export async function POST(request: Request) {
     sanitize(body.countryRegion ?? ""),
     sanitize(body.proceedings ?? ""),
     sanitize(body.funding ?? ""),
-    sanitize(body.summary ?? ""),
+    summary,
     LEAD_BRAND_NAME,
   ];
 
   if (sheetsConfigured) {
     try {
-      await appendRow(row);
-    } catch (error) {
-      console.error("Google Sheets write failed:", {
-        message: error instanceof Error ? error.message : "Unknown error",
+      await appendRowWithRetry(row);
+    } catch (error: unknown) {
+      const err = error as { message?: string; code?: number; response?: { status?: number } };
+      console.error("Google Sheets error:", {
+        message: err?.message,
+        code: err?.code,
+        status: err?.response?.status,
+        spreadsheetId: process.env.GOOGLE_SHEET_ID?.slice(0, 8) + "...",
         timestamp: new Date().toISOString(),
       });
       if (!webhookUrl) {

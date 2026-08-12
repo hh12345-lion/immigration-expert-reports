@@ -30,24 +30,24 @@ const steps = [
 export default function ThankYouPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#1E3A5F] py-16 md:py-24">
+      <section className="relative overflow-hidden bg-[#0C0E12] py-16 md:py-24">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.08]"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 70% 30%, #B8860B 0%, transparent 45%), radial-gradient(circle at 30% 80%, #0E7490 0%, transparent 35%)",
+              "radial-gradient(circle at 70% 30%, #C5E63A 0%, transparent 45%), radial-gradient(circle at 30% 80%, #4F8FFF 0%, transparent 35%)",
           }}
           aria-hidden
         />
         <div className="relative mx-auto max-w-2xl px-4 text-center sm:px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#B8860B]">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#C5E63A]">
             Immigration Expert Reports
           </p>
           <div
-            className="mx-auto mt-8 flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-2 border-[#0E7490]/40 bg-[#0E7490]/15"
+            className="mx-auto mt-8 flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-2 border-[#4F8FFF]/40 bg-[#4F8FFF]/15"
             aria-hidden="true"
           >
-            <svg className="h-9 w-9 text-[#0E7490]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-9 w-9 text-[#4F8FFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
             </svg>
           </div>
@@ -63,7 +63,7 @@ export default function ThankYouPage() {
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
               href="/"
-              className="inline-flex min-h-[44px] min-w-[200px] items-center justify-center rounded-[4px] bg-[#0E7490] px-8 py-3 font-semibold text-white transition hover:bg-[#0c6378]"
+              className="inline-flex min-h-[44px] min-w-[200px] items-center justify-center rounded-[4px] bg-[#4F8FFF] px-8 py-3 font-semibold text-white transition hover:bg-[#3A7AF0]"
             >
               Return to Homepage
             </Link>
@@ -77,42 +77,42 @@ export default function ThankYouPage() {
         </div>
       </section>
 
-      <section className="bg-[#F8FAFC] py-14">
+      <section className="bg-[#DEE2E6] py-14">
         <div className="mx-auto max-w-2xl px-4 sm:px-6">
-          <h2 className="text-center text-xl font-bold text-[#1E3A5F]">What happens next?</h2>
+          <h2 className="text-center text-xl font-bold text-[#0C0E12]">What happens next?</h2>
           <ol className="mt-8 space-y-4">
             {steps.map((item) => (
               <li
                 key={item.step}
-                className="flex gap-4 rounded-[8px] border border-[#CBD5E1] bg-white p-5 shadow-sm"
+                className="flex gap-4 rounded-[8px] border border-[#C5CAD1] bg-white p-5 shadow-sm"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1E3A5F] text-sm font-bold text-white">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0C0E12] text-sm font-bold text-white">
                   {item.step}
                 </span>
                 <div className="text-left">
-                  <p className="font-semibold text-[#1E3A5F]">{item.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-[#374151]">{item.body}</p>
+                  <p className="font-semibold text-[#0C0E12]">{item.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#3A3F47]">{item.body}</p>
                 </div>
               </li>
             ))}
           </ol>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-[#CBD5E1] pt-8">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-[#C5CAD1] pt-8">
             <Link
               href="/how-to-instruct"
-              className="inline-flex min-h-[44px] items-center font-semibold text-[#0E7490] hover:underline"
+              className="inline-flex min-h-[44px] items-center font-semibold text-[#4F8FFF] hover:underline"
             >
               How to instruct an expert
             </Link>
             <Link
               href="/guides/immigration-expert-report-standards-guide"
-              className="inline-flex min-h-[44px] items-center font-semibold text-[#0E7490] hover:underline"
+              className="inline-flex min-h-[44px] items-center font-semibold text-[#4F8FFF] hover:underline"
             >
               Expert report standards guide
             </Link>
             <Link
               href="/report-standards"
-              className="inline-flex min-h-[44px] items-center font-semibold text-[#0E7490] hover:underline"
+              className="inline-flex min-h-[44px] items-center font-semibold text-[#4F8FFF] hover:underline"
             >
               Report standards pillar
             </Link>

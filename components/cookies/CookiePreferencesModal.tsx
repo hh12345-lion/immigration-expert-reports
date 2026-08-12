@@ -23,13 +23,13 @@ function CategoryToggle({
   const meta = CATEGORY_META[category];
 
   return (
-    <li className="rounded-[8px] border border-[#CBD5E1] bg-white p-4 shadow-sm">
+    <li className="border border-border bg-surface p-4">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
-          <p className="font-semibold text-[#1E3A5F]">{meta.label}</p>
-          <p className="mt-1 text-sm leading-relaxed text-[#374151]">{meta.description}</p>
+          <p className="font-display font-bold text-ink">{meta.label}</p>
+          <p className="mt-1 text-sm leading-relaxed text-body">{meta.description}</p>
           {meta.required && (
-            <p className="mt-2 text-xs font-medium uppercase tracking-wide text-[#B8860B]">
+            <p className="font-display mt-2 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-signal">
               Always active
             </p>
           )}
@@ -44,15 +44,15 @@ function CategoryToggle({
             aria-label={`${meta.label} cookies`}
           />
           <span
-            className={`relative block h-7 w-12 rounded-full transition-colors duration-200 ${
+            className={`relative block h-7 w-12 transition-colors duration-200 ${
               meta.required
-                ? "bg-[#1E3A5F]/35"
-                : "bg-[#CBD5E1] peer-focus-visible:ring-2 peer-focus-visible:ring-[#0E7490] peer-focus-visible:ring-offset-2 peer-checked:bg-[#0E7490]"
+                ? "bg-ink/35"
+                : "bg-border peer-focus-visible:ring-2 peer-focus-visible:ring-signal peer-focus-visible:ring-offset-2 peer-checked:bg-signal"
             }`}
             aria-hidden
           >
             <span
-              className={`absolute left-0.5 top-0.5 h-6 w-6 rounded-full bg-white shadow transition-transform duration-200 ${
+              className={`absolute left-0.5 top-0.5 h-6 w-6 bg-white shadow transition-transform duration-200 ${
                 checked ? "translate-x-5" : "translate-x-0"
               }`}
             />
@@ -133,7 +133,7 @@ export function CookiePreferencesModal() {
     >
       <button
         type="button"
-        className="absolute inset-0 bg-[#1E3A5F]/60 backdrop-blur-[3px] animate-[fadeIn_0.2s_ease-out]"
+        className="absolute inset-0 bg-ink/60 backdrop-blur-[3px] animate-[fadeIn_0.2s_ease-out]"
         aria-label="Close cookie preferences"
         onClick={closePreferences}
       />
@@ -142,28 +142,28 @@ export function CookiePreferencesModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="cookie-prefs-title"
-        className="relative z-10 flex max-h-[min(90vh,640px)] w-full max-w-lg flex-col overflow-hidden rounded-t-[8px] border border-[#CBD5E1] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.25)] sm:rounded-[8px] animate-[slideUp_0.35s_cubic-bezier(0.16,1,0.3,1)] sm:animate-[fadeIn_0.25s_ease-out]"
+        className="relative z-10 flex max-h-[min(90vh,640px)] w-full max-w-lg flex-col overflow-hidden border border-border bg-surface shadow-[0_20px_60px_rgba(0,0,0,0.25)] animate-[slideUp_0.35s_cubic-bezier(0.16,1,0.3,1)] sm:animate-[fadeIn_0.25s_ease-out]"
       >
-        <div className="border-b border-[#CBD5E1] bg-[#1E3A5F] px-5 py-4 sm:px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#B8860B]">
+        <div className="border-b border-white/10 bg-ink px-5 py-4 sm:px-6">
+          <p className="font-display text-[0.65rem] font-bold uppercase tracking-[0.16em] text-mark">
             Cookie settings
           </p>
-          <h2 id="cookie-prefs-title" className="mt-1 text-lg font-bold text-white">
-            Customize your preferences
+          <h2 id="cookie-prefs-title" className="font-display mt-1 text-lg font-bold text-white">
+            Customise preferences
           </h2>
           <p className="mt-1 text-sm text-white/75">
             Choose which cookies we may use.{" "}
-            <Link href="/cookie-policy" className="text-[#B8860B] hover:underline" onClick={closePreferences}>
+            <Link href="/cookie-policy" className="text-mark hover:underline" onClick={closePreferences}>
               Cookie Policy
             </Link>
             {" · "}
-            <Link href="/privacy" className="text-[#B8860B] hover:underline" onClick={closePreferences}>
+            <Link href="/privacy" className="text-mark hover:underline" onClick={closePreferences}>
               Privacy Policy
             </Link>
           </p>
         </div>
 
-        <div className="flex-1 overflow-y-auto bg-[#F8FAFC] px-5 py-4 sm:px-6">
+        <div className="flex-1 overflow-y-auto bg-paper px-5 py-4 sm:px-6">
           <ul className="space-y-3">
             {CATEGORIES.map((key) => (
               <CategoryToggle
@@ -176,35 +176,35 @@ export function CookiePreferencesModal() {
           </ul>
         </div>
 
-        <div className="flex flex-col gap-2 border-t border-[#CBD5E1] bg-white p-4 sm:flex-row sm:flex-wrap sm:justify-end">
+        <div className="flex flex-col gap-2 border-t border-border bg-surface p-4 sm:flex-row sm:flex-wrap sm:justify-end">
           <button
             type="button"
             ref={closeBtnRef}
             onClick={closePreferences}
-            className="min-h-[44px] rounded-[4px] border border-[#CBD5E1] px-4 py-2 text-sm font-medium text-[#374151] transition hover:bg-[#F8FAFC]"
+            className="font-display min-h-[44px] border border-border px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.1em] text-body transition hover:bg-paper"
           >
             Cancel
           </button>
           <button
             type="button"
             onClick={rejectNonEssential}
-            className="min-h-[44px] rounded-[4px] border border-[#1E3A5F] px-4 py-2 text-sm font-semibold text-[#1E3A5F] transition hover:bg-[#F8FAFC]"
+            className="font-display min-h-[44px] border border-ink px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.1em] text-ink transition hover:bg-paper"
           >
-            Reject Non-Essential
+            Reject non-essential
           </button>
           <button
             type="button"
             onClick={() => savePreferences(draft)}
-            className="min-h-[44px] rounded-[4px] bg-[#1E3A5F] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#172f4d]"
+            className="font-display min-h-[44px] bg-ink px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.1em] text-white transition hover:bg-signal"
           >
-            Save Preferences
+            Save
           </button>
           <button
             type="button"
             onClick={acceptAll}
-            className="min-h-[44px] rounded-[4px] bg-[#0E7490] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#0c6378]"
+            className="font-display min-h-[44px] bg-mark px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.1em] text-ink transition hover:bg-white"
           >
-            Accept All
+            Accept all
           </button>
         </div>
       </div>

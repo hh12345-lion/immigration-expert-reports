@@ -11,12 +11,16 @@ export const LINKEDIN_URL =
   "https://www.linkedin.com/company/immigrationexpertreports";
 
 export const COLORS = {
-  primary: "#1E3A5F",
-  accent: "#0E7490",
-  gold: "#B8860B",
-  background: "#FFFFFF",
-  sectionAlt: "#F8FAFC",
-  border: "#CBD5E1",
-  heading: "#1E3A5F",
-  body: "#374151",
+  primary: "#0C0E12",
+  accent: "#4F8FFF",
+  gold: "#C5E63A",
+  background: "#E9ECEF",
+  sectionAlt: "#DEE2E6",
+  border: "#C5CAD1",
+  heading: "#0C0E12",
+  body: "#3A3F47",
+  ink: "#0C0E12",
+  paper: "#E9ECEF",
+  signal: "#4F8FFF",
+  mark: "#C5E63A",
 } as const;

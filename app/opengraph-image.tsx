@@ -13,35 +13,57 @@ export default function OpenGraphImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#1E3A5F",
-          padding: 80,
+          justifyContent: "flex-end",
+          backgroundColor: "#0C0E12",
+          padding: 72,
+          position: "relative",
         }}
       >
         <div
           style={{
-            fontSize: 56,
+            position: "absolute",
+            top: 0,
+            right: 0,
+            width: "40%",
+            height: "100%",
+            background: "linear-gradient(270deg, rgba(79,143,255,0.35) 0%, transparent 100%)",
+          }}
+        />
+        <div
+          style={{
+            fontSize: 18,
+            fontWeight: 700,
+            color: "#C5E63A",
+            letterSpacing: "0.2em",
+            textTransform: "uppercase",
+            marginBottom: 16,
+          }}
+        >
+          Pier Index
+        </div>
+        <div
+          style={{
+            fontSize: 52,
             fontWeight: 700,
             color: "#FFFFFF",
             letterSpacing: "-0.02em",
-            textAlign: "center",
-            lineHeight: 1.1,
+            lineHeight: 1.05,
+            maxWidth: 900,
           }}
         >
           Immigration Expert Reports
         </div>
         <p
           style={{
-            marginTop: 32,
-            fontSize: 32,
-            fontWeight: 600,
-            color: "#0E7490",
-            textAlign: "center",
+            marginTop: 24,
+            fontSize: 26,
+            fontWeight: 500,
+            color: "#4F8FFF",
             lineHeight: 1.3,
+            maxWidth: 800,
           }}
         >
-          UK Immigration Tribunal Expert Evidence
+          UK tribunal expert evidence — country, persecution, CPIN, human rights
         </p>
       </div>
     ),

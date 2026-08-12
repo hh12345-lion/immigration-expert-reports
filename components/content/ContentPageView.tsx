@@ -30,7 +30,7 @@ export function ContentPageView({
       <PageJsonLd breadcrumbs={breadcrumbs} faqs={enriched.faqs.length ? enriched.faqs : undefined} />
       <PageShell title={enriched.h1} breadcrumbs={breadcrumbs}>
         {enriched.content.map((p, i) => (
-          <p key={i} className="mb-4 text-[#374151] leading-relaxed">
+          <p key={i} className="mb-4 text-[#3A3F47] leading-relaxed">
             {p}
           </p>
         ))}
@@ -39,11 +39,11 @@ export function ContentPageView({
 
         {relatedLinks.length > 0 && (
           <>
-            <h2 className="mt-8 text-xl font-bold text-[#1E3A5F]">Related Resources</h2>
+            <h2 className="mt-8 text-xl font-bold text-[#0C0E12]">Related Resources</h2>
             <ul className="mt-4 space-y-2">
               {relatedLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-[#0E7490] hover:underline">
+                  <Link href={link.href} className="text-[#4F8FFF] hover:underline">
                     {link.label}
                   </Link>
                 </li>
@@ -55,7 +55,7 @@ export function ContentPageView({
         {enriched.faqs.length > 0 && <FAQSection faqs={enriched.faqs} />}
 
         <div className="mt-10">
-          <Link href={hubHref} className="font-semibold text-[#B8860B] hover:underline">
+          <Link href={hubHref} className="font-semibold text-[#4F8FFF] hover:underline">
             ← Back to {hubLabel}
           </Link>
         </div>

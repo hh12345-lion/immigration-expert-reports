@@ -23,11 +23,11 @@ export default function ReportTypesPage() {
         subtitle="The network taxonomy for expert evidence in UK immigration tribunals — what to instruct, when, and which specialist site to use."
         breadcrumbs={crumbs}
       >
-        <p className="mb-8 text-[#374151] leading-relaxed">
+        <p className="mb-8 text-[#3A3F47] leading-relaxed">
           immigrationexpertreports.com owns the report type taxonomy and instruction standards. Country-specific
           asylum profiles live on sibling network sites — this hub explains each report type and links to the right
           specialist. See our{" "}
-          <Link href="/network" className="text-[#0E7490] hover:underline">
+          <Link href="/network" className="text-[#4F8FFF] hover:underline">
             network directory
           </Link>{" "}
           for country and thematic expert sites.
@@ -40,19 +40,19 @@ export default function ReportTypesPage() {
           }))}
         />
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/report-standards" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/report-standards" className="font-semibold text-[#4F8FFF] hover:underline">
             Report standards pillar
           </Link>
-          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#4F8FFF] hover:underline">
             CPIN & Country Guidance
           </Link>
-          <Link href="/how-to-instruct" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/how-to-instruct" className="font-semibold text-[#4F8FFF] hover:underline">
             How to instruct
           </Link>
-          <Link href="/contact" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#4F8FFF] hover:underline">
             Contact us
           </Link>
-          <Link href="/guides/choosing-the-right-expert" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/guides/choosing-the-right-expert" className="font-semibold text-[#4F8FFF] hover:underline">
             Choosing the right expert
           </Link>
         </div>

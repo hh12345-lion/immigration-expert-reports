@@ -5,6 +5,15 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Lead_notification_setup.md — rewrite so production uses the Netlify function
+# (not the Next.js App Router route). Local `next dev` still uses app/api/submit-lead.
+# Function also writes Google Sheets when GOOGLE_* env vars are set.
+[[redirects]]
+  from = "/api/submit-lead"
+  to = "/.netlify/functions/submit-lead"
+  status = 200
+  force = true
+
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]

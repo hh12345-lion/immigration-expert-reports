@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
@@ -20,20 +21,39 @@ export default function ContactPage() {
     <>
       <PageJsonLd breadcrumbs={crumbs} />
       <PageShell
-        title="Request an Immigration Expert Report"
-        subtitle="Submit your case details for UK tribunal proceedings — confidential response within one business day."
+        title="Instruct in four fields"
+        subtitle="Name, firm, email, and a short case note. We match the right network specialist for UK tribunal proceedings."
         breadcrumbs={crumbs}
       >
-        <p className="mb-4 text-[#374151] leading-relaxed">
-          Complete the form below or email{" "}
-          <a href={`mailto:${SITE_EMAIL}`} className="text-[#0E7490] hover:underline">
-            {SITE_EMAIL}
-          </a>
-          . We route instructions to the appropriate specialist in our network for United Kingdom immigration and
-          asylum tribunal cases.
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-16">
+          <div>
+            <p className="leading-relaxed text-body">
+              Prefer email? Write to{" "}
+              <a href={`mailto:${SITE_EMAIL}`} className="font-medium text-signal hover:underline">
+                {SITE_EMAIL}
+              </a>
+              .
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-muted">{SITE_SCOPE_LINE}</p>
+            <ul className="mt-8 space-y-3 border-l-2 border-signal pl-4 text-sm text-body">
+              <li>Country / region of risk</li>
+              <li>FTT, Upper Tribunal, or related appeal stage</li>
+              <li>Report type if known (country condition, CPIN challenge, etc.)</li>
+            </ul>
+          </div>
+          <ContactForm />
+        </div>
+        <p className="mt-10 text-sm text-muted">
+          Also see{" "}
+          <Link href="/how-to-instruct" className="text-signal hover:underline">
+            how to instruct
+          </Link>{" "}
+          and{" "}
+          <Link href="/fees" className="text-signal hover:underline">
+            fees guidance
+          </Link>
+          .
         </p>
-        <p className="mb-8 text-sm text-[#374151]/90 leading-relaxed">{SITE_SCOPE_LINE}</p>
-        <ContactForm />
       </PageShell>
     </>
   );

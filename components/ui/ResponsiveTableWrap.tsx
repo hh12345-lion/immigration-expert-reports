@@ -10,8 +10,8 @@ export function ResponsiveTableWrap({
 }) {
   return (
     <div className="table-scroll">
-      <p className="mb-2 text-xs text-[#374151] sm:sr-only">{label}</p>
-      <div className="overflow-x-auto rounded-[8px] border border-[#C8DDD6]">{children}</div>
+      <p className="mb-2 text-xs text-[#3A3F47] sm:sr-only">{label}</p>
+      <div className="overflow-x-auto border border-border">{children}</div>
     </div>
   );
 }

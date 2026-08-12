@@ -1,6 +1,6 @@
 export const LEAD_BRAND_NAME = "Immigration Expert Reports";
 
-/** Row 1 column headers for Google Sheet (Sheet35) — must match append order in /api/submit-lead */
+/** Row 1 column headers for Google Sheet — must match append order in /api/submit-lead */
 export const LEAD_SHEET_COLUMNS = [
   "Timestamp",
   "Full Name",
@@ -48,16 +48,41 @@ export function getLeadWebhookUrl(): string | undefined {
   );
 }
 
-/** Client-side: POST lead to /api/submit-lead */
-export async function postSubmitLead(payload: SubmitLeadPayload): Promise<boolean> {
+export type SubmitLeadResult = { ok: true } | { ok: false; error: string };
+
+/**
+ * Lead_notification_setup.md — POST to /api/submit-lead.
+ * On Netlify, force-redirect sends this to /.netlify/functions/submit-lead.
+ */
+export async function postSubmitLead(payload: SubmitLeadPayload): Promise<SubmitLeadResult> {
   try {
     const res = await fetch("/api/submit-lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({
+        fullName: payload.fullName,
+        email: payload.email,
+        phone: payload.phone ?? "",
+        organisation: payload.organisation ?? "",
+        reportType: payload.reportType ?? "",
+        countryRegion: payload.countryRegion ?? "",
+        proceedings: payload.proceedings ?? "",
+        funding: payload.funding ?? "",
+        summary: payload.summary ?? "",
+      }),
     });
-    return res.ok;
+
+    if (res.ok) return { ok: true };
+
+    let message = `Submission failed (${res.status})`;
+    try {
+      const data = (await res.json()) as { error?: string };
+      if (data?.error) message = data.error;
+    } catch {
+      // ignore non-JSON error bodies
+    }
+    return { ok: false, error: message };
   } catch {
-    return false;
+    return { ok: false, error: "Could not reach the server. Check your connection and try again." };
   }
 }

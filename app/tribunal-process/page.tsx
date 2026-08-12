@@ -23,7 +23,7 @@ export default function TribunalProcessPage() {
         subtitle="Unique to this site — tribunal procedure for expert reports in FTT, Upper Tribunal, SJE directions, hot-tubbing, late evidence, and judicial review."
         breadcrumbs={crumbs}
       >
-        <p className="mb-8 text-[#374151] leading-relaxed">
+        <p className="mb-8 text-[#3A3F47] leading-relaxed">
           Understanding tribunal procedure is essential for timely expert instruction. Reports must comply with
           tribunal directions, Practice Direction 2024, and the Adam Pipe October 2025 guide. Instruct experts early —
           standard turnaround is 2 to 3 weeks.
@@ -36,10 +36,10 @@ export default function TribunalProcessPage() {
           }))}
         />
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/report-standards" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/report-standards" className="font-semibold text-[#4F8FFF] hover:underline">
             Report standards
           </Link>
-          <Link href="/tribunal-process/late-expert-evidence" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/tribunal-process/late-expert-evidence" className="font-semibold text-[#4F8FFF] hover:underline">
             Late expert evidence
           </Link>
         </div>

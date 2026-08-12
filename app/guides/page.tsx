@@ -31,19 +31,19 @@ export default function GuidesPage() {
           }))}
         />
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/report-standards" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/report-standards" className="font-semibold text-[#4F8FFF] hover:underline">
             Full report standards pillar page
           </Link>
-          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#4F8FFF] hover:underline">
             CPIN & Country Guidance
           </Link>
-          <Link href="/network" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/network" className="font-semibold text-[#4F8FFF] hover:underline">
             Network directory
           </Link>
-          <Link href="/how-to-instruct" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/how-to-instruct" className="font-semibold text-[#4F8FFF] hover:underline">
             How to instruct
           </Link>
-          <Link href="/contact" className="font-semibold text-[#B8860B] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#4F8FFF] hover:underline">
             Contact us
           </Link>
         </div>

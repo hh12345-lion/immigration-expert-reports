@@ -7,20 +7,20 @@ export default function NotFound() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[#1E3A5F] py-16 text-center md:py-24">
+      <section className="relative overflow-hidden bg-[#0C0E12] py-16 text-center md:py-24">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.07]"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 20% 50%, #B8860B 0%, transparent 50%), radial-gradient(circle at 80% 20%, #0E7490 0%, transparent 40%)",
+              "radial-gradient(circle at 20% 50%, #C5E63A 0%, transparent 50%), radial-gradient(circle at 80% 20%, #4F8FFF 0%, transparent 40%)",
           }}
           aria-hidden
         />
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#B8860B]">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#C5E63A]">
             Immigration Expert Reports
           </p>
-          <p className="mt-8 text-8xl font-bold leading-none text-[#B8860B]/90 sm:text-9xl" aria-hidden="true">
+          <p className="mt-8 text-8xl font-bold leading-none text-[#C5E63A]/90 sm:text-9xl" aria-hidden="true">
             404
           </p>
           <h1 className="mt-4 text-3xl font-bold text-white sm:text-4xl">Page not found</h1>
@@ -32,7 +32,7 @@ export default function NotFound() {
           <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Link
               href="/"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-[4px] bg-[#0E7490] px-8 py-3 font-semibold text-white transition hover:bg-[#0c6378]"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-[4px] bg-[#4F8FFF] px-8 py-3 font-semibold text-white transition hover:bg-[#3A7AF0]"
             >
               Return to Homepage
             </Link>
@@ -46,9 +46,9 @@ export default function NotFound() {
         </div>
       </section>
 
-      <section className="bg-[#F8FAFC] py-14">
+      <section className="bg-[#DEE2E6] py-14">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-xl font-bold text-[#1E3A5F]">Popular destinations</h2>
+          <h2 className="text-center text-xl font-bold text-[#0C0E12]">Popular destinations</h2>
           <nav className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" aria-label="Quick links">
             {[
               { label: "Report Types", href: "/report-types", desc: "Country condition, persecution, human rights, CPIN challenge" },
@@ -59,10 +59,10 @@ export default function NotFound() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group rounded-[8px] border border-[#CBD5E1] bg-white p-5 text-left transition hover:border-[#0E7490] hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)]"
+                className="group rounded-[8px] border border-[#C5CAD1] bg-white p-5 text-left transition hover:border-[#4F8FFF] hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)]"
               >
-                <span className="font-semibold text-[#1E3A5F] group-hover:text-[#0E7490]">{item.label}</span>
-                <span className="mt-1 block text-sm text-[#374151]">{item.desc}</span>
+                <span className="font-semibold text-[#0C0E12] group-hover:text-[#4F8FFF]">{item.label}</span>
+                <span className="mt-1 block text-sm text-[#3A3F47]">{item.desc}</span>
               </Link>
             ))}
           </nav>
@@ -73,37 +73,37 @@ export default function NotFound() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <h2 className="text-lg font-bold text-[#1E3A5F]">Report types</h2>
+              <h2 className="text-lg font-bold text-[#0C0E12]">Report types</h2>
               <ul className="mt-4 space-y-2">
                 {featuredTypes.map((r) => (
                   <li key={r.slug}>
                     <Link
                       href={`/report-types/${r.slug}`}
-                      className="text-sm font-medium text-[#0E7490] hover:underline"
+                      className="text-sm font-medium text-[#4F8FFF] hover:underline"
                     >
                       {r.title}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link href="/report-types" className="text-sm font-semibold text-[#1E3A5F] hover:underline">
+                  <Link href="/report-types" className="text-sm font-semibold text-[#0C0E12] hover:underline">
                     View all report types
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="text-lg font-bold text-[#1E3A5F]">Services</h2>
+              <h2 className="text-lg font-bold text-[#0C0E12]">Services</h2>
               <ul className="mt-4 space-y-2">
                 {services.slice(0, 5).map((s) => (
                   <li key={s.slug}>
-                    <Link href={`/services/${s.slug}`} className="text-sm font-medium text-[#0E7490] hover:underline">
+                    <Link href={`/services/${s.slug}`} className="text-sm font-medium text-[#4F8FFF] hover:underline">
                       {s.title}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link href="/services" className="text-sm font-semibold text-[#1E3A5F] hover:underline">
+                  <Link href="/services" className="text-sm font-semibold text-[#0C0E12] hover:underline">
                     View all services
                   </Link>
                 </li>

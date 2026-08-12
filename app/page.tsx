@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CTASection } from "@/components/ui/CTASection";
-import { CardGrid } from "@/components/ui/CardGrid";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { homepageGraph, websiteSchema } from "@/lib/schema";
 import { reportTypes } from "@/data/report-types";
@@ -16,165 +16,260 @@ export const metadata = createMetadata({
   path: "/",
 });
 
+const priorityReports = [
+  { label: "Country condition reports", href: "/report-types/country-condition-reports" },
+  { label: "Persecution analysis", href: "/report-types/persecution-analysis-reports" },
+  { label: "Human rights violation reports", href: "/report-types/human-rights-violation-reports" },
+  { label: "CPIN challenge reports", href: "/report-types/cpin-challenge-reports" },
+];
+
 export default function HomePage() {
   return (
     <>
       <JsonLd data={[homepageGraph(), websiteSchema()]} />
-      <section className="bg-[#1E3A5F] py-14 md:py-20">
-        <div className="mx-auto min-w-0 max-w-6xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-medium uppercase tracking-wide text-[#B8860B] sm:text-sm">
-            UK Immigration & Asylum Tribunals
-          </p>
-          <h1 className="mt-4 max-w-4xl break-words text-2xl font-bold text-white min-[375px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-            Immigration Expert Reports UK: Tribunal Evidence for Solicitors
-          </h1>
-          <p className="mt-6 max-w-2xl text-base text-white/80 sm:text-lg">
-            The network master hub for immigration expert reports. We set report standards, instruction process, and
-            tribunal compliance — connecting UK solicitors, barristers, and Legal Aid practitioners with qualified
-            experts for asylum appeals, human rights claims, deportation proceedings, and Upper Tribunal cases.
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[4px] bg-[#0E7490] px-6 py-3 font-semibold text-white hover:bg-[#0c6378] sm:w-auto sm:px-8"
-            >
-              Request an Expert Report
-            </Link>
-            <Link
-              href="/how-to-instruct"
-              className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[4px] border-2 border-white px-6 py-3 text-center font-semibold text-white hover:bg-white/10 sm:w-auto sm:px-8"
-            >
-              How to Instruct
-            </Link>
+
+      {/* Masthead — brand-first, one composition */}
+      <section className="relative overflow-hidden bg-ink text-white">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-channel-corridor.png"
+            alt=""
+            fill
+            priority
+            className="object-cover opacity-55"
+            sizes="100vw"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40"
+            aria-hidden
+          />
+        </div>
+
+        <div className="relative mx-auto grid min-h-[min(88vh,44rem)] max-w-7xl items-end gap-10 px-4 pb-14 pt-16 sm:px-6 sm:pb-16 sm:pt-20 lg:grid-cols-12 lg:px-8 lg:pb-20">
+          <div className="lg:col-span-8">
+            <p className="animate-mast font-display text-[0.7rem] font-bold uppercase tracking-[0.22em] text-mark">
+              Immigration Expert Reports
+            </p>
+            <h1 className="animate-mast-delay font-display mt-4 max-w-3xl text-3xl font-bold leading-[1.05] tracking-tight min-[375px]:text-4xl sm:text-5xl lg:text-6xl">
+              Tribunal-ready expert evidence for UK immigration appeals
+            </h1>
+            <p className="animate-mast-delay mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
+              Country conditions, persecution risk, CPIN challenge, and human rights analysis — instructed through one
+              network hub for First-tier and Upper Tribunal proceedings.
+            </p>
+            <div className="animate-mast-delay mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <Link
+                href="/contact"
+                className="font-display inline-flex min-h-[44px] w-full items-center justify-center bg-mark px-6 py-3 text-[0.75rem] font-bold uppercase tracking-[0.14em] text-ink hover:bg-white sm:w-auto sm:px-8"
+              >
+                Request a report
+              </Link>
+              <Link
+                href="/how-to-instruct"
+                className="font-display inline-flex min-h-[44px] w-full items-center justify-center border border-white/35 px-6 py-3 text-[0.75rem] font-bold uppercase tracking-[0.14em] text-white hover:border-mark hover:text-mark sm:w-auto sm:px-8"
+              >
+                How to instruct
+              </Link>
+            </div>
+          </div>
+
+          <aside className="animate-rail hidden border-l border-white/15 pl-6 lg:col-span-4 lg:block">
+            <p className="font-display text-[0.65rem] font-bold uppercase tracking-[0.16em] text-signal">
+              What practitioners instruct
+            </p>
+            <ul className="mt-4 space-y-3 text-sm text-white/70">
+              <li>Practice Direction 2024 length discipline (20-page default)</li>
+              <li>Dated primary sources vs generic CPIN summaries</li>
+              <li>Ikarian Reefer independence &amp; duty to the tribunal</li>
+              <li>Legal Aid prior-authority friendly instruction packs</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      {/* Substance rail */}
+      <section className="border-b border-border bg-surface">
+        <div className="mx-auto grid max-w-7xl gap-0 lg:grid-cols-12">
+          <div className="border-b border-border px-4 py-12 sm:px-6 lg:col-span-5 lg:border-b-0 lg:border-r lg:px-8 lg:py-16">
+            <p className="font-display text-[0.65rem] font-bold uppercase tracking-[0.18em] text-signal">
+              Why expert evidence
+            </p>
+            <h2 className="font-display mt-3 text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+              CPINs state policy. Experts address the appellant.
+            </h2>
+            <div className="relative mt-8 aspect-[4/3] overflow-hidden bg-section-alt">
+              <Image
+                src="/images/bundle-index.jpg"
+                alt="Indexed tribunal bundle sections with steel-blue tape and chartreuse tabs"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
+          </div>
+
+          <div className="px-4 py-12 sm:px-6 lg:col-span-7 lg:px-10 lg:py-16">
+            <p className="leading-relaxed text-body">
+              Home Office Country Policy and Information Notes give a generalised country picture. Immigration
+              tribunals still need independent analysis tied to the appellant&apos;s profile — ethnicity, religion,
+              political activity, sexual orientation, gender, health, or particular social group — with sources dated
+              and cited so the judge can weigh reliability.
+            </p>
+            <p className="mt-4 leading-relaxed text-body">
+              This hub sets report standards, instruction workflow, and compliance expectations across a network of
+              country and thematic specialists. Guidance here relates only to United Kingdom proceedings: the
+              Immigration and Asylum Chamber, Upper Tribunal (IAC), and related UK appeals.
+            </p>
+
+            <dl className="mt-10 space-y-6 border-t border-border pt-8">
+              {[
+                {
+                  t: "Standards before drafting",
+                  d: "Practice Direction 2024, Adam Pipe October 2025 practitioner guidance, Ikarian Reefer independence, and CPR Part 35 principles applied in tribunal settings.",
+                },
+                {
+                  t: "Routed specialist network",
+                  d: "Country-specific and thematic expert sites share one instruction path — you describe the case; we match the right report type and jurisdiction.",
+                },
+                {
+                  t: "Legal Aid compatible",
+                  d: "Instruction bundles and rate framing designed for LAA prior authority in FTT and Upper Tribunal matters.",
+                },
+              ].map((item) => (
+                <div key={item.t} className="grid gap-2 md:grid-cols-[minmax(0,11rem)_1fr] md:gap-6">
+                  <dt className="font-display text-sm font-bold text-ink">{item.t}</dt>
+                  <dd className="text-sm leading-relaxed text-body">{item.d}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F8FAFC] py-12 sm:py-16">
-        <div className="mx-auto min-w-0 max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-bold text-[#1E3A5F] sm:text-2xl md:text-3xl">
-            Why Immigration Expert Evidence Matters
-          </h2>
-          <p className="mt-4 max-w-3xl text-[#374151] leading-relaxed">
-            UK immigration tribunals rely heavily on expert evidence — country condition reports, persecution analysis,
-            human rights assessments, CPIN challenges, and linguistic identity reports. Home Office CPINs provide
-            generic country policy; independent expert reports address the appellant&apos;s specific profile with dated
-            primary sources and Practice Direction 2024 compliance.
-          </p>
-          <p className="mt-4 max-w-3xl text-sm text-[#374151]/90 leading-relaxed">
-            All guidance on this site relates to expert evidence in United Kingdom proceedings — the Immigration and
-            Asylum Chamber, Upper Tribunal (Immigration and Asylum Chamber), and related UK appeals. We do not advise
-            on immigration matters outside the UK.
-          </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Report Standards & Compliance",
-                desc: "Practice Direction 2024 (20-page default), Adam Pipe October 2025 guide, Ikarian Reefer independence, and CPR Part 35 principles applied in tribunal proceedings.",
-              },
-              {
-                title: "Network of Specialist Experts",
-                desc: "Country-specific, persecution, and human rights expert sites across our network — routed through one instruction process and quality framework.",
-              },
-              {
-                title: "Legal Aid Compatible",
-                desc: "LAA prior authority guidance, rate expectations, and instruction bundles for legally aided FTT and Upper Tribunal proceedings.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-[8px] border border-[#CBD5E1] bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.08)]"
-              >
-                <h3 className="font-semibold text-[#1E3A5F]">{item.title}</h3>
-                <p className="mt-2 text-sm text-[#374151]">{item.desc}</p>
-              </div>
+      {/* Report index — not cards */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-4 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="font-display text-[0.65rem] font-bold uppercase tracking-[0.18em] text-signal">
+                Report types
+              </p>
+              <h2 className="font-display mt-2 text-2xl font-bold text-ink sm:text-3xl">Filing index</h2>
+            </div>
+            <Link
+              href="/report-types"
+              className="font-display text-[0.7rem] font-bold uppercase tracking-[0.12em] text-signal hover:text-ink"
+            >
+              View all types →
+            </Link>
+          </div>
+
+          <div className="mt-2">
+            {reportTypes.slice(0, 6).map((r) => (
+              <Link key={r.slug} href={`/report-types/${r.slug}`} className="index-row group">
+                <span className="font-display text-base font-bold text-ink group-hover:text-signal">{r.title}</span>
+                <span className="text-sm leading-relaxed text-body">{r.metaDescription.slice(0, 140)}…</span>
+                <span className="font-display text-[0.65rem] font-bold uppercase tracking-[0.12em] text-muted group-hover:text-mark">
+                  Open
+                </span>
+              </Link>
             ))}
           </div>
-        </div>
-      </section>
 
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto min-w-0 max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-bold text-[#1E3A5F] sm:text-2xl">Report Types</h2>
-          <p className="mt-2 max-w-3xl text-[#374151]">
-            Eight report types across our network taxonomy — from country condition to oral evidence at tribunal.
-          </p>
-          <div className="mt-8">
-            <CardGrid
-              items={reportTypes.slice(0, 6).map((r) => ({
-                title: r.title,
-                description: r.metaDescription.slice(0, 120) + "...",
-                href: `/report-types/${r.slug}`,
-              }))}
-            />
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+            {priorityReports.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="font-display text-[0.7rem] font-bold uppercase tracking-[0.1em] text-signal hover:text-ink"
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link href="/report-types" className="inline-flex min-h-[44px] items-center font-semibold text-[#0E7490] hover:underline">
-              View all report types
+
+          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            <Link href="/report-standards" className="text-body underline-offset-4 hover:text-signal hover:underline">
+              Report standards
             </Link>
-            <Link href="/report-standards" className="inline-flex min-h-[44px] items-center font-semibold text-[#0E7490] hover:underline">
-              Report standards guide
+            <Link
+              href="/cpin-and-country-guidance"
+              className="text-body underline-offset-4 hover:text-signal hover:underline"
+            >
+              CPIN &amp; Country Guidance
             </Link>
-            <Link href="/cpin-and-country-guidance" className="inline-flex min-h-[44px] items-center font-semibold text-[#0E7490] hover:underline">
-              CPIN & Country Guidance
+            <Link
+              href="/what-is-an-immigration-expert-report"
+              className="text-body underline-offset-4 hover:text-signal hover:underline"
+            >
+              What is an expert report?
             </Link>
-            <Link href="/what-is-an-immigration-expert-report" className="inline-flex min-h-[44px] items-center font-semibold text-[#0E7490] hover:underline">
-              What is an immigration expert report?
-            </Link>
-            <Link href="/network" className="inline-flex min-h-[44px] items-center font-semibold text-[#0E7490] hover:underline">
+            <Link href="/network" className="text-body underline-offset-4 hover:text-signal hover:underline">
               Network directory
             </Link>
           </div>
-          <div className="mt-6">
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-[#1E3A5F]">Priority report types</h3>
-            <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
-              {[
-                { label: "Country condition reports", href: "/report-types/country-condition-reports" },
-                { label: "Persecution analysis reports", href: "/report-types/persecution-analysis-reports" },
-                { label: "Human rights violation reports", href: "/report-types/human-rights-violation-reports" },
-                { label: "CPIN challenge reports", href: "/report-types/cpin-challenge-reports" },
-              ].map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-sm font-medium text-[#0E7490] hover:underline">
-                    {item.label}
+        </div>
+      </section>
+
+      {/* Services as offset strip */}
+      <section className="bg-ink py-14 text-white sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="font-display text-[0.65rem] font-bold uppercase tracking-[0.18em] text-mark">Services</p>
+          <h2 className="font-display mt-2 max-w-xl text-2xl font-bold sm:text-3xl">
+            From written report to oral evidence
+          </h2>
+          <ul className="mt-10 divide-y divide-white/10 border-y border-white/10">
+            {services.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/services/${s.slug}`}
+                  className="group flex flex-col gap-2 py-5 transition sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+                >
+                  <span className="font-display text-lg font-bold group-hover:text-mark">{s.title}</span>
+                  <span className="max-w-xl text-sm leading-relaxed text-white/60 sm:text-right">{s.description}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Case types — staggered margin */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="md:ml-[12%] lg:ml-[18%]">
+            <p className="font-display text-[0.65rem] font-bold uppercase tracking-[0.18em] text-signal">
+              Case types
+            </p>
+            <h2 className="font-display mt-2 text-2xl font-bold text-ink sm:text-3xl">Where reports are used</h2>
+            <p className="mt-3 max-w-2xl text-body">
+              Asylum appeals, human rights claims, deportation, and Upper Tribunal challenges each need a different
+              evidential emphasis — risk on return, Article 8/3, or error of law.
+            </p>
+            <ul className="mt-8 space-y-0">
+              {caseTypes.slice(0, 4).map((c, i) => (
+                <li key={c.slug}>
+                  <Link
+                    href={`/case-types/${c.slug}`}
+                    className="group flex gap-4 border-b border-border py-4 sm:gap-6"
+                    style={{ marginLeft: `${Math.min(i * 1.25, 4)}rem` }}
+                  >
+                    <span className="font-display shrink-0 text-signal">/</span>
+                    <span>
+                      <span className="font-display block font-bold text-ink group-hover:text-signal">{c.title}</span>
+                      <span className="mt-1 block text-sm text-body">{c.metaDescription.slice(0, 110)}…</span>
+                    </span>
                   </Link>
                 </li>
               ))}
             </ul>
+            <Link
+              href="/case-types"
+              className="font-display mt-8 inline-flex min-h-[44px] items-center text-[0.7rem] font-bold uppercase tracking-[0.12em] text-signal hover:text-ink"
+            >
+              All case types →
+            </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F8FAFC] py-12 sm:py-16">
-        <div className="mx-auto min-w-0 max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-bold text-[#1E3A5F] sm:text-2xl">Expert Services</h2>
-          <div className="mt-8">
-            <CardGrid
-              items={services.map((s) => ({
-                title: s.title,
-                description: s.description,
-                href: `/services/${s.slug}`,
-              }))}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto min-w-0 max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-bold text-[#1E3A5F] sm:text-2xl">Case Types</h2>
-          <div className="mt-8">
-            <CardGrid
-              items={caseTypes.slice(0, 4).map((c) => ({
-                title: c.title,
-                description: c.metaDescription.slice(0, 120) + "...",
-                href: `/case-types/${c.slug}`,
-              }))}
-            />
-          </div>
-          <Link href="/case-types" className="mt-8 inline-flex min-h-[44px] items-center font-semibold text-[#0E7490] hover:underline">
-            View all case types
-          </Link>
         </div>
       </section>
 

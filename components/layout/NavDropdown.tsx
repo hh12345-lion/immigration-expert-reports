@@ -29,42 +29,60 @@ export function NavDropdown({ label, href, items, scrollable }: NavDropdownProps
     >
       <Link
         href={href}
-        className={`inline-flex min-h-[44px] items-center gap-1 rounded-[4px] px-2 py-2 text-sm hover:bg-[#F8FAFC] hover:text-[#1E3A5F] ${open ? "bg-[#F8FAFC] text-[#1E3A5F]" : "text-[#374151]"}`}
+        className={`font-display inline-flex min-h-[44px] items-center gap-1.5 px-2.5 py-2 text-[0.7rem] font-bold uppercase tracking-[0.14em] transition-colors ${
+          open ? "text-mark" : "text-white/75 hover:text-white"
+        }`}
         aria-expanded={open}
         aria-haspopup="true"
       >
-        {label}
-        <svg
-          className={`h-4 w-4 opacity-60 transition-transform duration-150 ${open ? "rotate-180" : ""}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+        <span
+          className={`h-1.5 w-1.5 rounded-full transition-colors ${open ? "bg-mark" : "bg-signal"}`}
           aria-hidden
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
+        />
+        {label}
       </Link>
 
-      {/* pt-2 bridge keeps dropdown open while moving pointer from trigger to menu */}
       <div
-        className={`absolute left-0 top-full z-[60] pt-2 ${scrollable ? "min-w-[280px]" : "min-w-[240px]"} ${open ? "pointer-events-auto visible opacity-100" : "pointer-events-none invisible opacity-0"} transition-opacity duration-150`}
+        className={`absolute left-1/2 top-full z-[60] w-[min(92vw,28rem)] -translate-x-1/2 pt-3 ${
+          open ? "pointer-events-auto visible opacity-100" : "pointer-events-none invisible opacity-0"
+        } transition-opacity duration-150`}
       >
-        <ul
-          className={`rounded-[4px] border border-[#CBD5E1] bg-white py-2 shadow-[0_4px_16px_rgba(0,0,0,0.1)] ${scrollable ? "max-h-[min(70vh,22rem)] overflow-y-auto" : ""}`}
-          role="menu"
-        >
-          {items.map((item) => (
-            <li key={item.href} role="none">
-              <Link
-                href={item.href}
-                role="menuitem"
-                className="block px-4 py-2.5 text-sm text-[#374151] hover:bg-[#F8FAFC] hover:text-[#1E3A5F] focus:bg-[#F8FAFC] focus:text-[#1E3A5F] focus:outline-none"
+        <div className="nav-panel overflow-hidden border border-white/10 bg-ink">
+          <div className="flex">
+            <div className="w-1.5 shrink-0 bg-signal" aria-hidden />
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
+                <p className="font-display text-[0.65rem] font-bold uppercase tracking-[0.16em] text-mark">
+                  Index · {label}
+                </p>
+                <Link
+                  href={href}
+                  className="font-display text-[0.65rem] font-bold uppercase tracking-[0.12em] text-signal hover:text-white"
+                >
+                  Open hub →
+                </Link>
+              </div>
+              <ul
+                className={`grid gap-0 py-1 ${scrollable ? "max-h-[min(70vh,22rem)] overflow-y-auto" : ""} ${
+                  items.length > 6 ? "sm:grid-cols-2" : "grid-cols-1"
+                }`}
+                role="menu"
               >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+                {items.map((item) => (
+                  <li key={item.href} role="none">
+                    <Link
+                      href={item.href}
+                      role="menuitem"
+                      className="block border-b border-white/[0.04] px-4 py-2.5 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white focus:bg-white/5 focus:text-white focus:outline-none"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

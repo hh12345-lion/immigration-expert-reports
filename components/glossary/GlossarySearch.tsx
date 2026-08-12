@@ -27,20 +27,20 @@ export function GlossarySearch({ terms }: { terms: GlossaryTerm[] }) {
         placeholder="Search terms…"
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        className="mb-8 w-full max-w-md rounded-[4px] border border-[#CBD5E1] px-4 py-3 min-h-[44px] focus:border-[#1E3A5F] focus:outline-none focus:ring-1 focus:ring-[#1E3A5F]"
+        className="form-field mb-8 max-w-md"
       />
-      <dl className="space-y-6">
+      <dl className="divide-y divide-border border-y border-border">
         {filtered.map((t) => {
           const slug = glossaryAnchorId(t.term);
           return (
-            <div key={slug} id={slug} className="scroll-mt-24 rounded-[8px] border border-[#CBD5E1] bg-white p-5">
-              <dt className="font-semibold text-[#1E3A5F]">{t.term}</dt>
-              <dd className="mt-2 text-[#374151] leading-relaxed">
+            <div key={slug} id={slug} className="scroll-mt-24 py-5">
+              <dt className="font-display font-bold text-ink">{t.term}</dt>
+              <dd className="mt-2 leading-relaxed text-body">
                 {t.definition}
                 {t.link && (
                   <>
                     {" "}
-                    <Link href={t.link} className="text-[#0E7490] hover:underline">
+                    <Link href={t.link} className="text-signal hover:underline">
                       Learn more →
                     </Link>
                   </>
