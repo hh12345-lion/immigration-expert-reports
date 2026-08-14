@@ -37,14 +37,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <PageJsonLd breadcrumbs={crumbs} faqs={service.faqs} />
       <PageShell title={service.h1} breadcrumbs={crumbs}>
         {service.content.map((p, i) => (
-          <p key={i} className="mb-4 text-[#3A3F47] leading-relaxed">
+          <p key={i} className="mb-4 text-[#3E4450] leading-relaxed">
             {p}
           </p>
         ))}
 
         {service.reportTypeHref && (
           <p className="mb-8">
-            <Link href={service.reportTypeHref} className="font-semibold text-[#4F8FFF] hover:underline">
+            <Link href={service.reportTypeHref} className="font-semibold text-[#2557D6] hover:underline">
               Learn more about this report type →
             </Link>
           </p>
@@ -53,10 +53,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <FAQSection faqs={service.faqs} />
 
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/contact" className="font-semibold text-[#4F8FFF] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#2557D6] hover:underline">
             Contact us
           </Link>
-          <Link href="/services" className="font-semibold text-[#4F8FFF] hover:underline">
+          <Link href="/services" className="font-semibold text-[#2557D6] hover:underline">
             ← All services
           </Link>
         </div>

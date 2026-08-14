@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Literata, Syne } from "next/font/google";
+import { Bricolage_Grotesque, Source_Serif_4 } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsentProvider } from "@/components/cookies";
@@ -8,15 +8,15 @@ import { SITE_URL } from "@/lib/constants";
 import { isProductionSite } from "@/lib/seo/is-production";
 import "./globals.css";
 
-const syne = Syne({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-bricolage",
   display: "swap",
 });
 
-const literata = Literata({
+const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-literata",
+  variable: "--font-source-serif",
   display: "swap",
 });
 
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${syne.variable} ${literata.variable} h-full`}>
+    <html lang="en-GB" className={`${bricolage.variable} ${sourceSerif.variable} h-full`}>
       <body className="flex min-h-full min-w-0 flex-col overflow-x-hidden font-sans antialiased">
         <ConsentDefaultsScript />
         <CookieConsentProvider>

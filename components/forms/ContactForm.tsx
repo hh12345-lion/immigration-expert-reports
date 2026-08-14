@@ -120,7 +120,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="font-display inline-flex min-h-[44px] w-full items-center justify-center bg-ink px-6 py-3 text-[0.75rem] font-bold uppercase tracking-[0.14em] text-white transition hover:bg-signal disabled:opacity-60 sm:w-auto"
+        className="font-display inline-flex min-h-[44px] w-full items-center justify-center rounded-[6px] bg-signal px-6 py-3 text-sm font-semibold text-white transition hover:bg-signal-hover disabled:opacity-60 sm:w-auto"
       >
         {status === "loading" ? "Sending…" : "Send instruction"}
       </button>

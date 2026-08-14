@@ -5,11 +5,11 @@ import { useEffect, useRef } from "react";
 import { useCookieConsent } from "./CookieConsentContext";
 
 const btnPrimary =
-  "font-display inline-flex min-h-[44px] w-full items-center justify-center bg-mark px-5 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-mark focus-visible:ring-offset-2 focus-visible:ring-offset-ink sm:w-auto";
+  "font-display inline-flex min-h-[44px] w-full items-center justify-center rounded-[6px] bg-mark px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-mark focus-visible:ring-offset-2 focus-visible:ring-offset-ink sm:w-auto";
 const btnSecondary =
-  "font-display inline-flex min-h-[44px] w-full items-center justify-center border border-white/35 bg-white/5 px-5 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white transition hover:bg-white/12 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink sm:w-auto";
+  "font-display inline-flex min-h-[44px] w-full items-center justify-center rounded-[6px] border border-white/35 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/12 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink sm:w-auto";
 const btnGhost =
-  "font-display inline-flex min-h-[44px] w-full items-center justify-center px-4 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.1em] text-white/90 underline-offset-2 transition hover:text-mark hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-white sm:w-auto";
+  "font-display inline-flex min-h-[44px] w-full items-center justify-center rounded-[6px] px-4 py-2.5 text-sm font-medium text-white/90 underline-offset-2 transition hover:text-mark hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-white sm:w-auto";
 
 export function CookieBanner() {
   const { status, acceptAll, rejectNonEssential, openPreferences } = useCookieConsent();
@@ -31,16 +31,12 @@ export function CookieBanner() {
       aria-modal="false"
       className="fixed inset-x-0 bottom-0 z-[100] px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-6 animate-[slideUp_0.45s_cubic-bezier(0.22,1,0.36,1)]"
     >
-      <div className="mx-auto max-w-5xl overflow-hidden border border-white/10 bg-ink shadow-[0_-4px_40px_rgba(0,0,0,0.35)]">
-        <div className="h-1 bg-gradient-to-r from-signal via-mark to-signal" aria-hidden />
-
+      <div className="mx-auto max-w-5xl overflow-hidden rounded-[6px] border border-white/10 bg-ink shadow-[0_-4px_40px_rgba(0,0,0,0.35)]">
         <div className="p-5 sm:p-6">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
-              <p className="font-display text-[0.65rem] font-bold uppercase tracking-[0.16em] text-mark">
-                Privacy &amp; compliance
-              </p>
-              <h2 id="cookie-banner-title" className="font-display mt-1.5 text-lg font-bold text-white sm:text-xl">
+              <p className="text-sm font-medium text-mark">Privacy &amp; compliance</p>
+              <h2 id="cookie-banner-title" className="font-display mt-1.5 text-lg font-semibold text-white sm:text-xl">
                 Cookie choices
               </h2>
               <p id="cookie-banner-desc" className="mt-2 text-sm leading-relaxed text-white/80">

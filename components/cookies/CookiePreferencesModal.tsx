@@ -23,7 +23,7 @@ function CategoryToggle({
   const meta = CATEGORY_META[category];
 
   return (
-    <li className="border border-border bg-surface p-4">
+    <li className="rounded-[6px] border border-border bg-surface p-4">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
           <p className="font-display font-bold text-ink">{meta.label}</p>
@@ -142,7 +142,7 @@ export function CookiePreferencesModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="cookie-prefs-title"
-        className="relative z-10 flex max-h-[min(90vh,640px)] w-full max-w-lg flex-col overflow-hidden border border-border bg-surface shadow-[0_20px_60px_rgba(0,0,0,0.25)] animate-[slideUp_0.35s_cubic-bezier(0.16,1,0.3,1)] sm:animate-[fadeIn_0.25s_ease-out]"
+        className="relative z-10 flex max-h-[min(90vh,640px)] w-full max-w-lg flex-col overflow-hidden rounded-[6px] border border-border bg-surface shadow-[0_20px_60px_rgba(0,0,0,0.25)] animate-[slideUp_0.35s_cubic-bezier(0.16,1,0.3,1)] sm:animate-[fadeIn_0.25s_ease-out]"
       >
         <div className="border-b border-white/10 bg-ink px-5 py-4 sm:px-6">
           <p className="font-display text-[0.65rem] font-bold uppercase tracking-[0.16em] text-mark">

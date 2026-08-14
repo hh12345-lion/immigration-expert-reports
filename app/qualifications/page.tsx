@@ -32,7 +32,7 @@ export default function QualificationsPage() {
         subtitle="Generic qualification standards for experts across our network — not country-specific profiles."
         breadcrumbs={crumbs}
       >
-        <p className="mb-6 text-[#3A3F47] leading-relaxed">
+        <p className="mb-6 text-[#3E4450] leading-relaxed">
           Immigration expert reports in UK tribunal proceedings require experts with demonstrated qualifications,
           relevant experience, and a track record of independent, objective analysis. These standards apply across
           all report types in our network taxonomy.
@@ -41,9 +41,9 @@ export default function QualificationsPage() {
           {qualifications.map((q) => (
             <li
               key={q}
-              className="flex gap-3 rounded-[8px] border border-[#C5CAD1] bg-white p-4 text-[#3A3F47]"
+              className="flex gap-3 rounded-[8px] border border-[#DDD6CB] bg-white p-4 text-[#3E4450]"
             >
-              <span className="mt-0.5 text-[#4F8FFF]" aria-hidden="true">
+              <span className="mt-0.5 text-[#2557D6]" aria-hidden="true">
                 ✓
               </span>
               {q}
@@ -51,7 +51,7 @@ export default function QualificationsPage() {
           ))}
         </ul>
         <div className="mt-10">
-          <Link href="/report-standards" className="font-semibold text-[#4F8FFF] hover:underline">
+          <Link href="/report-standards" className="font-semibold text-[#2557D6] hover:underline">
             Report standards pillar page
           </Link>
         </div>

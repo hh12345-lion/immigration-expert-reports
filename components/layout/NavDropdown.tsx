@@ -29,59 +29,55 @@ export function NavDropdown({ label, href, items, scrollable }: NavDropdownProps
     >
       <Link
         href={href}
-        className={`font-display inline-flex min-h-[44px] items-center gap-1.5 px-2.5 py-2 text-[0.7rem] font-bold uppercase tracking-[0.14em] transition-colors ${
-          open ? "text-mark" : "text-white/75 hover:text-white"
+        className={`inline-flex min-h-[44px] items-center gap-1 px-2.5 py-2 text-[0.95rem] transition-colors ${
+          open ? "text-signal" : "text-ink/80 hover:text-ink"
         }`}
         aria-expanded={open}
         aria-haspopup="true"
       >
-        <span
-          className={`h-1.5 w-1.5 rounded-full transition-colors ${open ? "bg-mark" : "bg-signal"}`}
-          aria-hidden
-        />
         {label}
+        <svg
+          className={`h-3.5 w-3.5 opacity-50 transition-transform ${open ? "rotate-180" : ""}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
       </Link>
 
       <div
-        className={`absolute left-1/2 top-full z-[60] w-[min(92vw,28rem)] -translate-x-1/2 pt-3 ${
+        className={`absolute left-0 top-full z-[60] w-[min(92vw,34rem)] pt-2 ${
           open ? "pointer-events-auto visible opacity-100" : "pointer-events-none invisible opacity-0"
         } transition-opacity duration-150`}
       >
-        <div className="nav-panel overflow-hidden border border-white/10 bg-ink">
-          <div className="flex">
-            <div className="w-1.5 shrink-0 bg-signal" aria-hidden />
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
-                <p className="font-display text-[0.65rem] font-bold uppercase tracking-[0.16em] text-mark">
-                  Index · {label}
-                </p>
-                <Link
-                  href={href}
-                  className="font-display text-[0.65rem] font-bold uppercase tracking-[0.12em] text-signal hover:text-white"
-                >
-                  Open hub →
-                </Link>
-              </div>
-              <ul
-                className={`grid gap-0 py-1 ${scrollable ? "max-h-[min(70vh,22rem)] overflow-y-auto" : ""} ${
-                  items.length > 6 ? "sm:grid-cols-2" : "grid-cols-1"
-                }`}
-                role="menu"
-              >
-                {items.map((item) => (
-                  <li key={item.href} role="none">
-                    <Link
-                      href={item.href}
-                      role="menuitem"
-                      className="block border-b border-white/[0.04] px-4 py-2.5 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white focus:bg-white/5 focus:text-white focus:outline-none"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="overflow-hidden rounded-[6px] border border-border bg-surface shadow-[0_16px_40px_rgba(27,36,48,0.12)]">
+          <div className="h-[3px] bg-mark" aria-hidden />
+          <div className="flex items-baseline justify-between gap-3 border-b border-border px-4 py-3">
+            <p className="font-display text-sm font-semibold text-ink">{label}</p>
+            <Link href={href} className="text-sm text-signal hover:underline">
+              All {label.toLowerCase()}
+            </Link>
           </div>
+          <ul
+            className={`grid gap-0 py-1 ${scrollable ? "max-h-[min(70vh,22rem)] overflow-y-auto" : ""} ${
+              items.length > 6 ? "sm:grid-cols-2" : "grid-cols-1"
+            }`}
+            role="menu"
+          >
+            {items.map((item) => (
+              <li key={item.href} role="none">
+                <Link
+                  href={item.href}
+                  role="menuitem"
+                  className="block px-4 py-2.5 text-sm text-body transition-colors hover:bg-paper hover:text-ink focus:bg-paper focus:text-ink focus:outline-none"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

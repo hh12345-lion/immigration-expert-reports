@@ -17,14 +17,14 @@ export default function TermsPage() {
     <>
       <PageJsonLd breadcrumbs={crumbs} />
       <PageShell title="Terms of Use" breadcrumbs={crumbs}>
-        <p className="text-[#3A3F47] leading-relaxed">
+        <p className="text-[#3E4450] leading-relaxed">
           Immigration Expert Reports is the network master hub for immigration expert evidence in UK tribunal
           proceedings. We coordinate report standards, instruction process, and routing to specialist network sites. We
           are not a law firm and do not provide legal advice. Expert reports instructed through our network operate
           independently and owe their primary duty to the tribunal under Immigration Tribunal Practice Direction
           paragraph 10 and Ikarian Reefer principles.
         </p>
-        <p className="mt-4 text-[#3A3F47] leading-relaxed">
+        <p className="mt-4 text-[#3E4450] leading-relaxed">
           Fees quoted are indicative and confirmed on instruction. Cancellation terms are agreed between the instructing
           solicitor and the expert at the point of engagement. Country-specific asylum profiles and regional content
           are published on sibling network sites, not on this domain.

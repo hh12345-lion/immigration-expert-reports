@@ -14,38 +14,23 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-end",
-          backgroundColor: "#0C0E12",
+          backgroundColor: "#F5F2EC",
           padding: 72,
-          position: "relative",
         }}
       >
         <div
           style={{
-            position: "absolute",
-            top: 0,
-            right: 0,
-            width: "40%",
-            height: "100%",
-            background: "linear-gradient(270deg, rgba(79,143,255,0.35) 0%, transparent 100%)",
+            width: 56,
+            height: 4,
+            backgroundColor: "#C47A12",
+            marginBottom: 28,
           }}
         />
         <div
           style={{
-            fontSize: 18,
-            fontWeight: 700,
-            color: "#C5E63A",
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
-            marginBottom: 16,
-          }}
-        >
-          Pier Index
-        </div>
-        <div
-          style={{
             fontSize: 52,
-            fontWeight: 700,
-            color: "#FFFFFF",
+            fontWeight: 600,
+            color: "#1B2430",
             letterSpacing: "-0.02em",
             lineHeight: 1.05,
             maxWidth: 900,
@@ -58,7 +43,7 @@ export default function OpenGraphImage() {
             marginTop: 24,
             fontSize: 26,
             fontWeight: 500,
-            color: "#4F8FFF",
+            color: "#2557D6",
             lineHeight: 1.3,
             maxWidth: 800,
           }}

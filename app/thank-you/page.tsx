@@ -30,46 +30,29 @@ const steps = [
 export default function ThankYouPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#0C0E12] py-16 md:py-24">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.08]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 70% 30%, #C5E63A 0%, transparent 45%), radial-gradient(circle at 30% 80%, #4F8FFF 0%, transparent 35%)",
-          }}
-          aria-hidden
-        />
-        <div className="relative mx-auto max-w-2xl px-4 text-center sm:px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#C5E63A]">
-            Immigration Expert Reports
-          </p>
-          <div
-            className="mx-auto mt-8 flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-2 border-[#4F8FFF]/40 bg-[#4F8FFF]/15"
-            aria-hidden="true"
-          >
-            <svg className="h-9 w-9 text-[#4F8FFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h1 className="mt-6 text-3xl font-bold text-white sm:text-4xl">Thank you</h1>
-          <p className="mt-4 text-lg leading-relaxed text-white/85">
+      <section className="bg-paper py-16 md:py-24">
+        <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">
+          <p className="text-sm font-medium text-signal">Immigration Expert Reports</p>
+          <h1 className="font-display mt-6 text-3xl font-semibold text-ink sm:text-4xl">Thank you</h1>
+          <span className="mx-auto mt-4 block h-[3px] w-14 bg-mark" aria-hidden />
+          <p className="mt-5 text-lg leading-relaxed text-body">
             Your expert report request has been received successfully. A member of our team will respond within one
             business day.
           </p>
-          <p className="mt-2 text-sm text-white/55">
+          <p className="mt-2 text-sm text-muted">
             For urgent tribunal deadlines, please note your hearing date in any follow-up correspondence.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
               href="/"
-              className="inline-flex min-h-[44px] min-w-[200px] items-center justify-center rounded-[4px] bg-[#4F8FFF] px-8 py-3 font-semibold text-white transition hover:bg-[#3A7AF0]"
+              className="font-display inline-flex min-h-[44px] min-w-[200px] items-center justify-center rounded-[6px] bg-signal px-8 py-3 font-semibold text-white transition hover:bg-signal-hover"
             >
               Return to Homepage
             </Link>
             <Link
               href="/services"
-              className="inline-flex min-h-[44px] min-w-[200px] items-center justify-center rounded-[4px] border-2 border-white/80 px-8 py-3 font-semibold text-white transition hover:bg-white/10"
+              className="font-display inline-flex min-h-[44px] min-w-[200px] items-center justify-center rounded-[6px] border border-ink/20 px-8 py-3 font-semibold text-ink transition hover:border-signal hover:text-signal"
             >
               View Services
             </Link>
@@ -77,42 +60,42 @@ export default function ThankYouPage() {
         </div>
       </section>
 
-      <section className="bg-[#DEE2E6] py-14">
+      <section className="bg-[#EBE6DC] py-14">
         <div className="mx-auto max-w-2xl px-4 sm:px-6">
-          <h2 className="text-center text-xl font-bold text-[#0C0E12]">What happens next?</h2>
+          <h2 className="text-center text-xl font-bold text-[#1B2430]">What happens next?</h2>
           <ol className="mt-8 space-y-4">
             {steps.map((item) => (
               <li
                 key={item.step}
-                className="flex gap-4 rounded-[8px] border border-[#C5CAD1] bg-white p-5 shadow-sm"
+                className="flex gap-4 rounded-[8px] border border-[#DDD6CB] bg-white p-5 shadow-sm"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0C0E12] text-sm font-bold text-white">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1B2430] text-sm font-bold text-white">
                   {item.step}
                 </span>
                 <div className="text-left">
-                  <p className="font-semibold text-[#0C0E12]">{item.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-[#3A3F47]">{item.body}</p>
+                  <p className="font-semibold text-[#1B2430]">{item.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#3E4450]">{item.body}</p>
                 </div>
               </li>
             ))}
           </ol>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-[#C5CAD1] pt-8">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-[#DDD6CB] pt-8">
             <Link
               href="/how-to-instruct"
-              className="inline-flex min-h-[44px] items-center font-semibold text-[#4F8FFF] hover:underline"
+              className="inline-flex min-h-[44px] items-center font-semibold text-[#2557D6] hover:underline"
             >
               How to instruct an expert
             </Link>
             <Link
               href="/guides/immigration-expert-report-standards-guide"
-              className="inline-flex min-h-[44px] items-center font-semibold text-[#4F8FFF] hover:underline"
+              className="inline-flex min-h-[44px] items-center font-semibold text-[#2557D6] hover:underline"
             >
               Expert report standards guide
             </Link>
             <Link
               href="/report-standards"
-              className="inline-flex min-h-[44px] items-center font-semibold text-[#4F8FFF] hover:underline"
+              className="inline-flex min-h-[44px] items-center font-semibold text-[#2557D6] hover:underline"
             >
               Report standards pillar
             </Link>

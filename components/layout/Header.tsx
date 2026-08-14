@@ -30,7 +30,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-ink text-white">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-paper/95 text-ink backdrop-blur-md">
       <input
         ref={toggleRef}
         id="mobile-nav-toggle"
@@ -39,30 +39,12 @@ export function Header() {
         aria-hidden
       />
 
-      <div className="border-b border-white/10">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-1.5 sm:px-6 lg:px-8">
-          <p className="font-display truncate text-[0.65rem] font-bold uppercase tracking-[0.18em] text-white/45">
-            UK Immigration &amp; Asylum Chamber · Expert evidence index
-          </p>
-          <Link
-            href="/contact"
-            className="font-display hidden shrink-0 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-mark hover:text-white sm:inline"
-          >
-            Instruct →
-          </Link>
-        </div>
-      </div>
-
-      <div className="header-bar mx-auto flex max-w-7xl items-end justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="group min-w-0 shrink">
-          <span className="font-display block text-[0.65rem] font-bold uppercase tracking-[0.2em] text-signal">
-            Pier Index
+      <div className="header-bar mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <Link href="/" className="min-w-0 shrink">
+          <span className="font-display block truncate text-lg font-semibold leading-tight tracking-tight text-ink min-[375px]:text-xl">
+            Immigration Expert Reports
           </span>
-          <span className="font-display mt-0.5 block truncate text-lg font-bold leading-tight tracking-tight text-white min-[375px]:text-xl sm:text-2xl">
-            Immigration
-            <span className="text-mark"> Expert </span>
-            Reports
-          </span>
+          <span className="mt-0.5 block text-[0.75rem] text-muted">UK tribunal evidence</span>
         </Link>
 
         <nav className="hidden items-center gap-0.5 overflow-visible lg:flex" aria-label="Main">
@@ -73,7 +55,7 @@ export function Header() {
           <NavDropdown label="Guides" href="/guides" items={resourcesNavLinks} scrollable />
           <Link
             href="/contact"
-            className="font-display ml-3 inline-flex min-h-[44px] items-center border border-mark bg-mark px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-white hover:border-white"
+            className="font-display ml-3 inline-flex min-h-[44px] items-center rounded-[6px] bg-signal px-4 py-2 text-sm font-semibold text-white transition hover:bg-signal-hover"
           >
             Contact
           </Link>
@@ -81,13 +63,13 @@ export function Header() {
 
         <label
           htmlFor="mobile-nav-toggle"
-          className="mobile-nav-label inline-flex min-h-[44px] min-w-[44px] shrink-0 cursor-pointer items-center justify-center border border-white/25 lg:hidden"
+          className="mobile-nav-label inline-flex min-h-[44px] min-w-[44px] shrink-0 cursor-pointer items-center justify-center rounded-[6px] border border-border lg:hidden"
         >
           <span className="sr-only">Toggle menu</span>
-          <svg className="icon-open h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+          <svg className="icon-open h-6 w-6 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <svg className="icon-close hidden h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+          <svg className="icon-close hidden h-6 w-6 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </label>
@@ -95,22 +77,20 @@ export function Header() {
 
       <nav
         id="mobile-menu"
-        className="hidden border-t border-white/10 bg-ink peer-checked:block lg:hidden"
+        className="hidden border-t border-border bg-paper peer-checked:block lg:hidden"
         aria-label="Mobile"
       >
         <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
           {mobileNavGroups.map((group) => (
-            <div key={group.title} className="mb-5 border-l-2 border-signal pl-3">
-              <p className="font-display mb-2 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-mark">
-                {group.title}
-              </p>
+            <div key={group.title} className="mb-5">
+              <p className="font-display mb-1 text-sm font-semibold text-ink">{group.title}</p>
               <ul className="space-y-0.5">
                 {group.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
                       onClick={closeMobileMenu}
-                      className="inline-flex min-h-[44px] w-full items-center text-sm text-white/80 hover:text-white"
+                      className="inline-flex min-h-[44px] w-full items-center text-sm text-body hover:text-signal"
                     >
                       {link.label}
                     </Link>
@@ -122,7 +102,7 @@ export function Header() {
           <Link
             href="/contact"
             onClick={closeMobileMenu}
-            className="font-display inline-flex min-h-[44px] w-full items-center justify-center border border-mark bg-mark px-4 py-3 text-[0.75rem] font-bold uppercase tracking-[0.12em] text-ink"
+            className="font-display inline-flex min-h-[44px] w-full items-center justify-center rounded-[6px] bg-signal px-4 py-3 text-sm font-semibold text-white"
           >
             Contact
           </Link>

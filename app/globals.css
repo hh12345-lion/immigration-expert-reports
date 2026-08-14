@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-ink: #0c0e12;
-  --color-paper: #e9ecef;
+  --color-ink: #1b2430;
+  --color-paper: #f5f2ec;
   --color-surface: #ffffff;
-  --color-signal: #4f8fff;
-  --color-signal-hover: #3a7af0;
-  --color-mark: #c5e63a;
-  --color-body: #3a3f47;
+  --color-signal: #2557d6;
+  --color-signal-hover: #1d46b3;
+  --color-mark: #c47a12;
+  --color-body: #3e4450;
   --color-muted: #6b7280;
-  --color-border: #c5cad1;
-  --color-section-alt: #dee2e6;
-  --color-primary: #0c0e12;
-  --color-accent: #4f8fff;
-  --color-gold: #c5e63a;
-  --font-display: var(--font-syne);
-  --font-sans: var(--font-literata);
-  --font-body: var(--font-literata);
-  --radius-card: 0px;
-  --radius-sm: 0px;
-  --shadow-card: none;
+  --color-border: #ddd6cb;
+  --color-section-alt: #ebe6dc;
+  --color-primary: #1b2430;
+  --color-accent: #2557d6;
+  --color-gold: #c47a12;
+  --font-display: var(--font-bricolage);
+  --font-sans: var(--font-source-serif);
+  --font-body: var(--font-source-serif);
+  --radius-card: 6px;
+  --radius-sm: 6px;
+  --shadow-card: 0 1px 0 rgba(27, 36, 48, 0.06);
   --breakpoint-xs: 375px;
 }
 
@@ -28,18 +28,9 @@ html {
 }
 
 body {
-  background:
-    linear-gradient(180deg, rgba(12, 14, 18, 0.03) 0%, transparent 120px),
-    repeating-linear-gradient(
-      -18deg,
-      transparent,
-      transparent 11px,
-      rgba(12, 14, 18, 0.018) 11px,
-      rgba(12, 14, 18, 0.018) 12px
-    ),
-    var(--color-paper);
+  background: var(--color-paper);
   color: var(--color-body);
-  font-family: var(--font-literata), Georgia, "Times New Roman", serif;
+  font-family: var(--font-source-serif), Georgia, "Times New Roman", serif;
   overflow-x: hidden;
   min-width: 320px;
   padding-left: env(safe-area-inset-left);
@@ -47,7 +38,7 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-syne), system-ui, sans-serif;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
 }
 
 img,
@@ -87,40 +78,6 @@ section {
   }
 }
 
-@keyframes mastRise {
-  from {
-    opacity: 0;
-    transform: translateY(1.25rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes railIn {
-  from {
-    opacity: 0;
-    transform: translateX(-0.75rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-mast {
-  animation: mastRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.animate-mast-delay {
-  animation: mastRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
-}
-
-.animate-rail {
-  animation: railIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
 .table-scroll {
   margin-left: -1rem;
   margin-right: -1rem;
@@ -152,40 +109,21 @@ section {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Index-row links (replaces card grids on home) */
-.index-row {
-  display: grid;
-  gap: 0.75rem 1.5rem;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--color-border);
-  transition: background-color 0.2s ease, padding-left 0.2s ease;
-}
-
-@media (min-width: 768px) {
-  .index-row {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr) auto;
-    align-items: baseline;
-  }
-}
-
-.index-row:hover {
-  background: rgba(79, 143, 255, 0.06);
-  padding-left: 0.5rem;
-}
-
-.nav-panel {
-  box-shadow: 0 24px 48px rgba(12, 14, 18, 0.28);
+.chamber-ticket {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 6px;
+  padding: 1rem 1.15rem;
 }
 
 .form-field {
   width: 100%;
   min-width: 0;
   max-width: 100%;
-  border: none;
-  border-bottom: 1.5px solid var(--color-border);
-  background: transparent;
-  border-radius: 0;
-  padding: 0.75rem 0;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 6px;
+  padding: 0.7rem 0.85rem;
   font-size: 1rem;
   color: var(--color-ink);
   min-height: 44px;
@@ -194,16 +132,15 @@ section {
 
 .form-field:focus {
   outline: none;
-  border-bottom-color: var(--color-signal);
+  border-color: var(--color-signal);
+  box-shadow: 0 0 0 3px rgba(37, 87, 214, 0.15);
 }
 
 .form-label {
   display: block;
-  margin-bottom: 0.35rem;
-  font-family: var(--font-syne), system-ui, sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--color-ink);
 }
