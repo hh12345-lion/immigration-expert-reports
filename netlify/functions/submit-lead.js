@@ -21,6 +21,15 @@ const { google } = require("googleapis");
 
 const BRAND_NAME = "Immigration Expert Reports";
 
+
+function getSiteDomain() {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL || "https://immigrationexpertreports.com";
+  try {
+    return new URL(raw).hostname.replace(/^www\./, "");
+  } catch {
+    return "immigrationexpertreports.com";
+  }
+}
 function jsonResponse(statusCode, data) {
   return {
     statusCode,
@@ -159,6 +168,7 @@ exports.handler = async (event) => {
         Email: mail,
         "Phone Number": tel,
         "Brand name": BRAND_NAME,
+    domain: getSiteDomain(),
       };
 
       const ac = new AbortController();

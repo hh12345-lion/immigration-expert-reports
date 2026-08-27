@@ -1,3 +1,12 @@
+function getSiteDomain(): string {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL || "https://immigrationexpertreports.com";
+  try {
+    return new URL(raw).hostname.replace(/^www\./, "");
+  } catch {
+    return "immigrationexpertreports.com";
+  }
+}
+
 export const LEAD_BRAND_NAME = "Immigration Expert Reports";
 
 /** Row 1 column headers for Google Sheet — must match append order in /api/submit-lead */
@@ -37,6 +46,7 @@ export function buildLeadWebhookPayload(input: SubmitLeadInput) {
     Email: input.email.trim(),
     "Phone Number": input.phone.trim(),
     "Brand name": LEAD_BRAND_NAME,
+    domain: getSiteDomain(),
   };
 }
 
