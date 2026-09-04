@@ -8,6 +8,14 @@
 # Lead_notification_setup.md — rewrite so production uses the Netlify function
 # (not the Next.js App Router route). Local `next dev` still uses app/api/submit-lead.
 # Function also writes Google Sheets when GOOGLE_* env vars are set.
+# AHREFS_WWW_APEX_REDIRECT — flatten https://www → apex (reduces Ahrefs redirect-chain)
+[[redirects]]
+  from = "/*"
+  to = "https://immigrationexpertreports.com/:splat"
+  status = 301
+  force = true
+  conditions = {Host = ["www.immigrationexpertreports.com"]}
+
 [[redirects]]
   from = "/api/submit-lead"
   to = "/.netlify/functions/submit-lead"
