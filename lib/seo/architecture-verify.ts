@@ -59,10 +59,10 @@ export function verifySeoArchitecture(): ArchIssue[] {
     });
   }
 
-  if (SITE_URL !== "https://www.immigrationexpertreports.com") {
+  if (SITE_URL !== "https://immigrationexpertreports.com") {
     issues.push({
       level: "warn",
-      message: `SITE_URL should be https://www.immigrationexpertreports.com (got ${SITE_URL})`,
+      message: `SITE_URL should be https://immigrationexpertreports.com (got ${SITE_URL})`,
     });
   }
 

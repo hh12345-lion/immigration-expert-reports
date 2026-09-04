@@ -8,4 +8,4 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /.netlify/
 
-Sitemap: https://www.immigrationexpertreports.com/sitemap.xml
+Sitemap: https://immigrationexpertreports.com/sitemap.xml
