@@ -62,7 +62,7 @@ export default function HomePage() {
             </div>
             <figure className="relative mt-10 aspect-[16/9] overflow-hidden rounded-[6px] bg-section-alt">
               <Image
-                src="/images/hero-channel-corridor.png"
+                src="/images/hero-channel-corridor.jpg"
                 alt=""
                 fill
                 priority
