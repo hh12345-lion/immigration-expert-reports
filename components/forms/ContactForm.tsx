@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { SITE_EMAIL } from "@/lib/constants";
 import { postSubmitLead } from "@/lib/submit-lead";
+import { submitNetlifyForm } from "@/lib/submitNetlifyForm";
 
 export function ContactForm() {
   const router = useRouter();
@@ -53,6 +54,17 @@ export function ContactForm() {
     });
 
     if (result.ok) {
+      try {
+        await submitNetlifyForm("contact", {
+          name: fullName,
+          law_firm: organisation,
+          email,
+          phone,
+          summary,
+        });
+      } catch {
+        // Lead webhook already stored the enquiry; don't block the visitor.
+      }
       router.push("/thank-you");
       return;
     }
@@ -62,7 +74,13 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="min-w-0 w-full max-w-xl space-y-7" noValidate>
+    <form name="contact" method="POST" action="/__forms.html" onSubmit={handleSubmit} className="min-w-0 w-full max-w-xl space-y-7" noValidate>
+      <input type="hidden" name="form-name" value="contact" />
+      <p className="hidden" aria-hidden="true">
+        <label>
+          Do not fill this out: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+        </label>
+      </p>
       <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <div className="min-w-0">
