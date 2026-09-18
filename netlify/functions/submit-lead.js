@@ -144,10 +144,11 @@ exports.handler = async (event) => {
   let parsed;
   try {
     parsed = JSON.parse(event.body || "{}");
-  const message = resolveLeadMessage(parsed);
   } catch {
     return jsonResponse(400, { error: "Invalid JSON body" });
   }
+
+  const message = resolveLeadMessage(parsed);
 
   try {
     const { fullName, email, phone } = parsed;
