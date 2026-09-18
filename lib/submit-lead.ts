@@ -28,6 +28,8 @@ export type SubmitLeadInput = {
   fullName: string;
   email: string;
   phone: string;
+  /** Free-text enquiry body — always sent to n8n as `message`. */
+  message?: string;
 };
 
 export type SubmitLeadPayload = SubmitLeadInput & {
@@ -47,6 +49,7 @@ export function buildLeadWebhookPayload(input: SubmitLeadInput) {
     "Phone Number": input.phone.trim(),
     "Brand name": LEAD_BRAND_NAME,
     domain: getSiteDomain(),
+    message: input.message ?? "",
   };
 }
 
@@ -79,6 +82,7 @@ export async function postSubmitLead(payload: SubmitLeadPayload): Promise<Submit
         proceedings: payload.proceedings ?? "",
         funding: payload.funding ?? "",
         summary: payload.summary ?? "",
+        message: payload.message ?? payload.summary ?? "",
       }),
     });
 

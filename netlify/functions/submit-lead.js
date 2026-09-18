@@ -98,6 +98,32 @@ async function appendLeadToSheet(row) {
   });
 }
 
+/** Map site-specific free-text field names to universal `message`. */
+function resolveLeadMessage(body) {
+  if (!body || typeof body !== "object") return "";
+  const keys = [
+    "message",
+    "Message",
+    "description",
+    "enquiry",
+    "details",
+    "summary",
+    "notes",
+    "matter",
+    "caseSummary",
+    "additionalInfo",
+    "additional_info",
+    "caseDetails",
+    "enquiryDetails",
+  ];
+  for (const key of keys) {
+    if (body[key] != null && String(body[key]).trim()) {
+      return String(body[key]).trim();
+    }
+  }
+  return "";
+}
+
 exports.handler = async (event) => {
   if (event.httpMethod === "OPTIONS") {
     return jsonResponse(204, {});
@@ -118,6 +144,7 @@ exports.handler = async (event) => {
   let parsed;
   try {
     parsed = JSON.parse(event.body || "{}");
+  const message = resolveLeadMessage(parsed);
   } catch {
     return jsonResponse(400, { error: "Invalid JSON body" });
   }
@@ -169,6 +196,7 @@ exports.handler = async (event) => {
         "Phone Number": tel,
         "Brand name": BRAND_NAME,
     domain: getSiteDomain(),
+    message,
       };
 
       const ac = new AbortController();
