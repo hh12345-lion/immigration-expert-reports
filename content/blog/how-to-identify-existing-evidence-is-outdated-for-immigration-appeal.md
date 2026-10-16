@@ -1,6 +1,6 @@
 ---
 title: "How to Identify When Existing Country Evidence Is Too Outdated for an Immigration Appeal"
-description: "How solicitors can review whether existing country evidence remains relevant for an immigration appeal — dates, developments, geography, and when newer material may assist."
+description: "How solicitors can review whether existing country evidence remains relevant for an immigration appeal, dates, developments, geography, and when newer material may assist."
 date: "2026-09-25"
 updated: "2026-09-25"
 image: "/images/blog/how-to-identify-existing-evidence-is-outdated-for-immigration-appeal.webp"

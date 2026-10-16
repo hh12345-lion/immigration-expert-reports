@@ -3,11 +3,12 @@ import { GlossarySearch } from "@/components/glossary/GlossarySearch";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { getGlossaryTermsWithLinks } from "@/data/glossary";
+import { sectionPhotos } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Immigration Expert Reports Glossary | UK Tribunal Terms",
   description:
-    "Glossary of immigration expert report and tribunal terms — CPIN, Country Guidance, Practice Direction, Ikarian Reefer, hot-tubbing, LAA prior authority, and more.",
+    "Glossary of immigration expert report and tribunal terms, CPIN, Country Guidance, Practice Direction, Ikarian Reefer, hot-tubbing, LAA prior authority, and more.",
   path: "/glossary",
 });
 
@@ -22,7 +23,7 @@ export default function GlossaryPage() {
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} faqs={faqItems} />
-      <PageShell
+      <PageShell photo={sectionPhotos.glossary}
         title="Immigration Expert Reports Glossary"
         subtitle="30 definition-first terms for UK immigration practitioners."
         breadcrumbs={crumbs}

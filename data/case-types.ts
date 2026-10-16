@@ -10,7 +10,7 @@ export const caseTypes: ContentPage[] = [
     h1: "Immigration Expert Reports for FTT Asylum Appeals",
     content: [
       "First-tier Tribunal asylum appeals are the most common proceeding requiring immigration expert evidence. Expert reports address country conditions, persecution analysis, human rights violations, and return risk beyond the Home Office CPIN and refusal letter.",
-      "Solicitors should identify the report type required at the earliest stage — country condition, persecution, human rights, or combined instructions. Use our report types hub and network directory to route instruction to the right specialist.",
+      "Solicitors should identify the report type required at the earliest stage, country condition, persecution, human rights, or combined instructions. Use our report types hub and network directory to route instruction to the right specialist.",
       "Expert reports must be exchanged in accordance with tribunal directions. Standard turnaround is 2 to 3 weeks. Practice Direction 2024 default 20-page limit applies unless permission is granted for longer reports.",
       "LAA prior authority is required for expert disbursements in legally aided cases. Confirm funding before the expert begins work. See our Legal Aid instruction guide for rate expectations and prior authority process.",
     ],
@@ -69,7 +69,7 @@ export const caseTypes: ContentPage[] = [
     h1: "Immigration Expert Reports for Deportation & Removal Cases",
     content: [
       "Deportation and removal cases frequently engage ECHR Article 3 (prohibition of torture and inhuman or degrading treatment) and Article 8 (family and private life). Human rights violation expert reports apply treaty and ECHR standards beyond Refugee Convention persecution analysis.",
-      "Medical deportation cases engage Paposhvili [2017] and Savran [2021] — medical evidence on treatment availability is essential alongside country condition analysis on healthcare infrastructure. This site signposts the distinction; medical experts are instructed separately.",
+      "Medical deportation cases engage Paposhvili [2017] and Savran [2021], medical evidence on treatment availability is essential alongside country condition analysis on healthcare infrastructure. This site signposts the distinction; medical experts are instructed separately.",
       "Country condition experts address return risk, state protection, and conditions in the country of origin. Human rights experts apply Article 3 and treaty standards. Combined instruction is common in complex deportation cases.",
     ],
     faqs: [
@@ -139,7 +139,7 @@ export const caseTypes: ContentPage[] = [
       {
         question: "Which network site provides human rights expert reports?",
         answer:
-          "humanrightsexperts.com — see our network directory for specialist human rights violation reports.",
+          "humanrightsexperts.com, see our network directory for specialist human rights violation reports.",
       },
     ],
     relatedLinks: [
@@ -183,7 +183,7 @@ export const caseTypes: ContentPage[] = [
       "Whether expert evidence is needed for Home Office administrative review. Limitations of AR and when to proceed to tribunal appeal with expert reports.",
     h1: "Immigration Expert Reports and Administrative Review",
     content: [
-      "Administrative review (AR) is an internal Home Office review process — it does not typically involve expert evidence submission. AR examines whether the original decision-maker made the correct decision based on the material before them.",
+      "Administrative review (AR) is an internal Home Office review process, it does not typically involve expert evidence submission. AR examines whether the original decision-maker made the correct decision based on the material before them.",
       "Expert reports are generally not submitted during administrative review. Where AR is unsuccessful, solicitors should consider expert evidence for the subsequent appeal to the First-tier Tribunal.",
       "Early expert instruction planning is advisable while AR is pending, particularly where country conditions are contested or the CPIN does not address the appellant's profile. This allows timely exchange when the appeal is lodged.",
     ],
@@ -191,7 +191,7 @@ export const caseTypes: ContentPage[] = [
       {
         question: "Can I submit expert evidence during administrative review?",
         answer:
-          "Generally no — AR reviews the original decision on existing material. Expert reports are typically instructed for subsequent tribunal appeals.",
+          "Generally no, AR reviews the original decision on existing material. Expert reports are typically instructed for subsequent tribunal appeals.",
       },
       {
         question: "Should I instruct an expert while AR is pending?",
@@ -212,7 +212,7 @@ export const caseTypes: ContentPage[] = [
       "Expert evidence in Upper Tribunal country guidance cases. CG framework, binding precedent, and expert role in CG challenges.",
     h1: "Immigration Expert Reports for Country Guidance Challenges",
     content: [
-      "Country Guidance (CG) cases before the Upper Tribunal establish binding precedent on country conditions for specific profiles. Expert evidence is central to CG challenges — experts must apply the CG framework and cite authoritative dated sources.",
+      "Country Guidance (CG) cases before the Upper Tribunal establish binding precedent on country conditions for specific profiles. Expert evidence is central to CG challenges, experts must apply the CG framework and cite authoritative dated sources.",
       "Where CG and CPIN conflict, tribunals must follow CG. Experts identify CPIN gaps, apply CG methodology, and provide profile-specific analysis that informs the country guidance determination.",
       "CG expert reports require the highest evidential standards. Independence under Ikarian Reefer principles is scrutinised closely. Experts may be directed to attend the UT and give oral evidence in CG cases.",
     ],

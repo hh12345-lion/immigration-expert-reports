@@ -17,13 +17,13 @@ export const services: Service[] = [
     slug: "country-condition-reports",
     title: "Country Condition Reports",
     description:
-      "Independent evidence on conditions in the country of origin beyond the Home Office CPIN — security, human rights, state protection, and profile-specific risks.",
+      "Independent evidence on conditions in the country of origin beyond the Home Office CPIN, security, human rights, state protection, and profile-specific risks.",
     metaTitle: "Country Condition Expert Reports Service UK | Immigration Tribunals",
     metaDescription:
       "Country condition expert report service for UK immigration tribunals. Independent evidence beyond the CPIN with dated sources and profile-specific analysis.",
     h1: "Country Condition Expert Reports Service",
     content: [
-      "Country condition expert reports provide independent evidence on security, human rights, state protection, and internal relocation in the appellant's country of origin. They address the individual appellant's profile and region — going beyond generic Home Office CPIN summaries.",
+      "Country condition expert reports provide independent evidence on security, human rights, state protection, and internal relocation in the appellant's country of origin. They address the individual appellant's profile and region, going beyond generic Home Office CPIN summaries.",
       "Our network routes country-specific instruction to specialist country expert sites while maintaining unified report standards, Practice Direction 2024 compliance, and tribunal-ready structure.",
       "Country condition reports are typically instructed alongside persecution or human rights analysis where both country conditions and Convention or ECHR issues are engaged.",
     ],
@@ -31,7 +31,7 @@ export const services: Service[] = [
       {
         question: "What does a country condition expert report cover?",
         answer:
-          "Security and human rights conditions, state protection effectiveness, internal relocation viability, and profile-specific risks relevant to the appellant's claimed fear — with dated primary sources beyond the Home Office CPIN.",
+          "Security and human rights conditions, state protection effectiveness, internal relocation viability, and profile-specific risks relevant to the appellant's claimed fear, with dated primary sources beyond the Home Office CPIN.",
       },
       {
         question: "How long does a country condition report take?",
@@ -45,7 +45,7 @@ export const services: Service[] = [
     slug: "persecution-analysis-reports",
     title: "Persecution Analysis Reports",
     description:
-      "Refugee Convention grounds analysis — political opinion, religion, race, nationality, PSG, nexus, state protection, and internal relocation.",
+      "Refugee Convention grounds analysis: political opinion, religion, race, nationality, PSG, nexus, state protection, and internal relocation.",
     metaTitle: "Persecution Analysis Expert Reports Service UK | Refugee Convention",
     metaDescription:
       "Persecution analysis expert report service for UK asylum tribunals. Convention nexus, state protection, and persecution methodology.",
@@ -59,12 +59,12 @@ export const services: Service[] = [
       {
         question: "When should I instruct a persecution analysis expert?",
         answer:
-          "When the claim turns on Refugee Convention nexus, persecution methodology, or state protection — often alongside a country condition expert for complex cases.",
+          "When the claim turns on Refugee Convention nexus, persecution methodology, or state protection, often alongside a country condition expert for complex cases.",
       },
       {
         question: "Can persecution and country experts be instructed together?",
         answer:
-          "Yes. Many cases require both — country experts assess conditions on the ground; persecution experts analyse Convention nexus and persecution threshold.",
+          "Yes. Many cases require both: country experts assess conditions on the ground; persecution experts analyse Convention nexus and persecution threshold.",
       },
     ],
     reportTypeHref: "/report-types/persecution-analysis-reports",
@@ -87,7 +87,7 @@ export const services: Service[] = [
       {
         question: "When is a human rights expert report needed?",
         answer:
-          "When the claim engages ECHR Article 3 deportation, Article 8 family/private life, or treaty standards beyond Refugee Convention persecution — including torture survivors and HR defenders.",
+          "When the claim engages ECHR Article 3 deportation, Article 8 family/private life, or treaty standards beyond Refugee Convention persecution, including torture survivors and HR defenders.",
       },
       {
         question: "Human rights expert vs persecution expert?",
@@ -129,7 +129,7 @@ export const services: Service[] = [
     slug: "internal-relocation-analysis",
     title: "Internal Relocation Analysis",
     description:
-      "Viability and reasonableness assessment of internal flight alternatives — security, clan connections, economic subsistence, and gender-specific barriers.",
+      "Viability and reasonableness assessment of internal flight alternatives, security, clan connections, economic subsistence, and gender-specific barriers.",
     metaTitle: "Internal Relocation Expert Reports Service UK | Immigration Tribunals",
     metaDescription:
       "Internal relocation expert report service for UK asylum tribunals. Viability and reasonableness analysis for internal flight alternatives.",
@@ -143,7 +143,7 @@ export const services: Service[] = [
       {
         question: "What does an internal relocation expert report assess?",
         answer:
-          "Whether internal relocation is viable and reasonable — security at the proposed destination, clan/economic support, gender-specific barriers, and whether relocation would expose the appellant to persecution or serious harm.",
+          "Whether internal relocation is viable and reasonable, security at the proposed destination, clan/economic support, gender-specific barriers, and whether relocation would expose the appellant to persecution or serious harm.",
       },
       {
         question: "Is internal relocation always in country condition reports?",
@@ -171,7 +171,7 @@ export const services: Service[] = [
       {
         question: "When is a linguistic expert needed in asylum cases?",
         answer:
-          "Where the appellant's claimed nationality, region, or clan identity is disputed — dialect analysis, cultural knowledge, and consistency with documented background.",
+          "Where the appellant's claimed nationality, region, or clan identity is disputed, dialect analysis, cultural knowledge, and consistency with documented background.",
       },
       {
         question: "Can a country expert assess clan membership?",
@@ -199,7 +199,7 @@ export const services: Service[] = [
       {
         question: "When should I request expert report QA review?",
         answer:
-          "Before tribunal exchange when you need confidence the report meets Practice Direction 2024, Adam Pipe 2025, and Ikarian Reefer independence standards — especially for late or externally prepared reports.",
+          "Before tribunal exchange when you need confidence the report meets Practice Direction 2024, Adam Pipe 2025, and Ikarian Reefer independence standards, especially for late or externally prepared reports.",
       },
       {
         question: "Does QA review replace instructing a qualified expert?",

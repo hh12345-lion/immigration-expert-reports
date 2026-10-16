@@ -4,11 +4,12 @@ import { CardGrid } from "@/components/ui/CardGrid";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { reportTypes } from "@/data/report-types";
+import { sectionPhotos } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Immigration Expert Report Types UK | Tribunal Evidence Taxonomy",
   description:
-    "Eight immigration expert report types for UK tribunals — country condition, persecution analysis, human rights, CPIN challenge, internal relocation, linguistic identity, and oral evidence.",
+    "Eight immigration expert report types for UK tribunals, country condition, persecution analysis, human rights, CPIN challenge, internal relocation, linguistic identity, and oral evidence.",
   path: "/report-types",
 });
 
@@ -18,16 +19,16 @@ export default function ReportTypesPage() {
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} />
-      <PageShell
+      <PageShell photo={sectionPhotos.reportTypes}
         title="Immigration Expert Report Types"
-        subtitle="The network taxonomy for expert evidence in UK immigration tribunals — what to instruct, when, and which specialist site to use."
+        subtitle="The network taxonomy for expert evidence in UK immigration tribunals, what to instruct, when, and which specialist site to use."
         breadcrumbs={crumbs}
       >
-        <p className="mb-8 text-[#3E4450] leading-relaxed">
+        <p className="mb-8 text-[#36404D] leading-relaxed">
           immigrationexpertreports.com owns the report type taxonomy and instruction standards. Country-specific
-          asylum profiles live on sibling network sites — this hub explains each report type and links to the right
+          asylum profiles live on sibling network sites, this hub explains each report type and links to the right
           specialist. See our{" "}
-          <Link href="/network" className="text-[#2557D6] hover:underline">
+          <Link href="/network" className="text-[#0458DE] hover:underline">
             network directory
           </Link>{" "}
           for country and thematic expert sites.
@@ -40,19 +41,19 @@ export default function ReportTypesPage() {
           }))}
         />
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/report-standards" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/report-standards" className="font-semibold text-[#0458DE] hover:underline">
             Report standards pillar
           </Link>
-          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#0458DE] hover:underline">
             CPIN & Country Guidance
           </Link>
-          <Link href="/how-to-instruct" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/how-to-instruct" className="font-semibold text-[#0458DE] hover:underline">
             How to instruct
           </Link>
-          <Link href="/contact" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#0458DE] hover:underline">
             Contact us
           </Link>
-          <Link href="/guides/choosing-the-right-expert" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/guides/choosing-the-right-expert" className="font-semibold text-[#0458DE] hover:underline">
             Choosing the right expert
           </Link>
         </div>

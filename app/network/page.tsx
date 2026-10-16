@@ -4,11 +4,12 @@ import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { networkSites } from "@/data/network-sites";
 import { SITE_SCOPE_LINE } from "@/lib/constants";
+import { sectionPhotos } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Immigration Expert Network Directory | Country & Thematic Expert Sites",
   description:
-    "Complete network directory for immigration expert reports — country-specific, persecution, and human rights expert sites linked from the master hub.",
+    "Complete network directory for immigration expert reports, country-specific, persecution, and human rights expert sites linked from the master hub.",
   path: "/network",
 });
 
@@ -18,9 +19,9 @@ export default function NetworkPage() {
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} />
-      <PageShell
+      <PageShell photo={sectionPhotos.network}
         title="Immigration Expert Network Directory"
-        subtitle="Country-specific asylum profiles and thematic expert reports live on sibling network sites. This hub links out with descriptive anchor text — no country content is published on this domain."
+        subtitle="Country-specific asylum profiles and thematic expert reports live on sibling network sites. This hub links out with descriptive anchor text, no country content is published on this domain."
         breadcrumbs={crumbs}
       >
         <p className="mb-4 leading-relaxed text-body">

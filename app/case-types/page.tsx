@@ -4,6 +4,7 @@ import { CardGrid } from "@/components/ui/CardGrid";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { caseTypes } from "@/data/case-types";
+import { sectionPhotos } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Immigration Case Types Requiring Expert Reports | UK Tribunal Guide",
@@ -18,7 +19,7 @@ export default function CaseTypesPage() {
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} />
-      <PageShell
+      <PageShell photo={sectionPhotos.caseTypes}
         title="Immigration Case Types & Expert Reports"
         subtitle="Which expert reports are needed for each type of UK immigration proceeding."
         breadcrumbs={crumbs}
@@ -31,19 +32,19 @@ export default function CaseTypesPage() {
           }))}
         />
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/report-types" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/report-types" className="font-semibold text-[#0458DE] hover:underline">
             View report types
           </Link>
-          <Link href="/report-standards" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/report-standards" className="font-semibold text-[#0458DE] hover:underline">
             Report standards
           </Link>
-          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#0458DE] hover:underline">
             CPIN & Country Guidance
           </Link>
-          <Link href="/how-to-instruct" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/how-to-instruct" className="font-semibold text-[#0458DE] hover:underline">
             How to instruct
           </Link>
-          <Link href="/contact" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#0458DE] hover:underline">
             Contact us
           </Link>
         </div>

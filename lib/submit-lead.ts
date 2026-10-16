@@ -9,7 +9,7 @@ function getSiteDomain(): string {
 
 export const LEAD_BRAND_NAME = "Immigration Expert Reports";
 
-/** Row 1 column headers for Google Sheet — must match append order in /api/submit-lead */
+/** Row 1 column headers for Google Sheet, must match append order in /api/submit-lead */
 export const LEAD_SHEET_COLUMNS = [
   "Timestamp",
   "Full Name",
@@ -28,7 +28,7 @@ export type SubmitLeadInput = {
   fullName: string;
   email: string;
   phone: string;
-  /** Free-text enquiry body — always sent to n8n as `message`. */
+  /** Free-text enquiry body: always sent to n8n as `message`. */
   message?: string;
 };
 
@@ -64,7 +64,7 @@ export function getLeadWebhookUrl(): string | undefined {
 export type SubmitLeadResult = { ok: true } | { ok: false; error: string };
 
 /**
- * Lead_notification_setup.md — POST to /api/submit-lead.
+ * Lead_notification_setup.md: POST to /api/submit-lead.
  * On Netlify, force-redirect sends this to /.netlify/functions/submit-lead.
  */
 export async function postSubmitLead(payload: SubmitLeadPayload): Promise<SubmitLeadResult> {

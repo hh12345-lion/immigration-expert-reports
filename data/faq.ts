@@ -17,7 +17,7 @@ export const faqs: FAQ[] = [
       "The Senior President's October 2025 guide sets tribunal expectations for expert report structure, independence, source quality, methodology, assumptions and limitations, and the relationship between experts and instructing solicitors. Reports must comply with these updated expectations.",
   },
   {
-    question: "Country condition vs persecution vs human rights expert — which do I need?",
+    question: "Country condition vs persecution vs human rights expert, which do I need?",
     answer:
       "Country condition experts assess conditions on the ground. Persecution experts analyse Refugee Convention nexus and methodology. Human rights experts apply ECHR and treaty standards. Many cases require combined instruction. See our report types hub and choosing the right expert guide.",
   },

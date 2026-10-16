@@ -1,24 +1,33 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Source_Serif_4 } from "next/font/google";
+import localFont from "next/font/local";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SwooshDefs } from "@/components/brand/Brand";
 import { CookieConsentProvider } from "@/components/cookies";
 import { ConsentDefaultsScript } from "@/components/cookies/ConsentDefaultsScript";
 import { SITE_URL } from "@/lib/constants";
 import { isProductionSite } from "@/lib/seo/is-production";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
-  subsets: ["latin"],
-  variable: "--font-bricolage",
+const gulzar = localFont({
+  src: [{ path: "./fonts/gulzar.woff2", weight: "400", style: "normal" }],
+  variable: "--font-gulzar",
   display: "swap",
 });
 
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  variable: "--font-source-serif",
+const almarai = localFont({
+  src: [
+    { path: "./fonts/almarai-300.woff2", weight: "300", style: "normal" },
+    { path: "./fonts/almarai-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/almarai-700.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/almarai-800.woff2", weight: "800", style: "normal" },
+  ],
+  variable: "--font-almarai",
   display: "swap",
 });
+
+/** Every page is rendered on the server per request. */
+export const dynamic = "force-dynamic";
 
 export const viewport = {
   width: "device-width",
@@ -53,9 +62,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${bricolage.variable} ${sourceSerif.variable} h-full`}>
+    <html lang="en-GB" className={`${gulzar.variable} ${almarai.variable} h-full`}>
       <body className="flex min-h-full min-w-0 flex-col overflow-x-hidden font-sans antialiased">
         <ConsentDefaultsScript />
+        <SwooshDefs />
         <CookieConsentProvider>
           <Header />
           <div className="flex-1">{children}</div>

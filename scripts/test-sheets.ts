@@ -33,7 +33,7 @@ async function test() {
     console.log("✅ Spreadsheet found:", info.title);
     console.log("   Tabs:", info.sheets?.map((s) => s.name).join(", "));
     if (!info.sheets?.some((s) => s.name === tab)) {
-      console.error(`❌ Tab "${tab}" not found — set GOOGLE_SHEET_TAB_NAME to an existing tab.`);
+      console.error(`❌ Tab "${tab}" not found, set GOOGLE_SHEET_TAB_NAME to an existing tab.`);
       process.exit(1);
     }
   } catch (error) {

@@ -5,10 +5,7 @@ import { FAQSection } from "@/components/ui/FAQSection";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { services, getService } from "@/data/services";
-
-export function generateStaticParams() {
-  return services.map((s) => ({ slug: s.slug }));
-}
+import { photoFor } from "@/lib/page-photos";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -35,16 +32,16 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} faqs={service.faqs} />
-      <PageShell title={service.h1} breadcrumbs={crumbs}>
+      <PageShell photo={photoFor(slug)} title={service.h1} breadcrumbs={crumbs}>
         {service.content.map((p, i) => (
-          <p key={i} className="mb-4 text-[#3E4450] leading-relaxed">
+          <p key={i} className="mb-4 text-[#36404D] leading-relaxed">
             {p}
           </p>
         ))}
 
         {service.reportTypeHref && (
           <p className="mb-8">
-            <Link href={service.reportTypeHref} className="font-semibold text-[#2557D6] hover:underline">
+            <Link href={service.reportTypeHref} className="font-semibold text-[#0458DE] hover:underline">
               Learn more about this report type →
             </Link>
           </p>
@@ -53,10 +50,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <FAQSection faqs={service.faqs} />
 
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/contact" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#0458DE] hover:underline">
             Contact us
           </Link>
-          <Link href="/services" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/services" className="font-semibold text-[#0458DE] hover:underline">
             ← All services
           </Link>
         </div>

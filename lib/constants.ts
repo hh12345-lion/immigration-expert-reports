@@ -1,6 +1,6 @@
 const DEFAULT_SITE_URL = "https://immigrationexpertreports.com";
 
-/** Canonical origin for SEO — strips www; ignores localhost/netlify preview env. */
+/** Canonical origin for SEO: strips www; ignores localhost/netlify preview env. */
 export function getPublicSiteUrl(): string {
   const fallback = DEFAULT_SITE_URL;
   const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
@@ -25,7 +25,7 @@ export const SITE_URL = getPublicSiteUrl();
 export const SITE_NAME = "Immigration Expert Reports";
 export const SITE_EMAIL = "cases@immigrationexpertreports.com";
 export const SITE_REGION = "United Kingdom";
-/** Short scope line for footers and contact — not a site-wide banner */
+/** Short scope line for footers and contact, not a site-wide banner */
 export const SITE_SCOPE_LINE =
   "Expert report guidance and instruction for UK immigration and asylum tribunal proceedings only (England, Wales, Scotland, and Northern Ireland).";
 export const LINKEDIN_URL =

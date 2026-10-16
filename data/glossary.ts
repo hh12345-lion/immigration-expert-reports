@@ -54,7 +54,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     term: "Ikarian Reefer",
     definition:
-      "Ikarian Reefer [1993] 2 Lloyd's Rep 68 — leading authority on expert independence. Experts owe a paramount duty to the tribunal, not the instructing party.",
+      "Ikarian Reefer [1993] 2 Lloyd's Rep 68, leading authority on expert independence. Experts owe a paramount duty to the tribunal, not the instructing party.",
   },
   {
     term: "Internal Relocation",
@@ -129,7 +129,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     term: "Country Condition Report",
     definition:
-      "Expert report on conditions in the country of origin — security, human rights, state protection, internal relocation, and profile-specific risks beyond the CPIN.",
+      "Expert report on conditions in the country of origin, security, human rights, state protection, internal relocation, and profile-specific risks beyond the CPIN.",
   },
   {
     term: "Persecution Expert Report",

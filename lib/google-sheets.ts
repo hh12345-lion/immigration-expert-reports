@@ -190,7 +190,7 @@ export async function appendRowWithRetry(
 
 /**
  * Read all rows from a sheet (or a specific range).
- * Returns an array of arrays — each inner array is one row.
+ * Returns an array of arrays: each inner array is one row.
  */
 export async function readRows(
   range?: string,

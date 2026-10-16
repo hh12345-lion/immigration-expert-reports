@@ -10,7 +10,7 @@ export const reportTypes: ContentPage[] = [
     h1: "Country Condition Expert Reports UK | Immigration Tribunal Evidence",
     content: [
       "Country condition expert reports provide independent evidence on conditions in the appellant's country of origin relevant to their specific profile and claimed fear. Unlike generic Home Office Country Policy Information Notes (CPINs), country condition reports address the individual appellant's circumstances, region, and persecution profile with dated primary sources.",
-      "Expert country condition analysis covers security and human rights conditions, state protection mechanisms and their effectiveness, internal relocation viability, and profile-specific risks that CPINs often omit — including clan minorities, religious minorities, LGBTQ+ individuals, political activists, and gender-based persecution profiles.",
+      "Expert country condition analysis covers security and human rights conditions, state protection mechanisms and their effectiveness, internal relocation viability, and profile-specific risks that CPINs often omit, including clan minorities, religious minorities, LGBTQ+ individuals, political activists, and gender-based persecution profiles.",
       "Country-specific analysis in our network is delivered through specialist country expert sites. immigrationexpertreports.com coordinates report standards, instruction process, and tribunal compliance while linking solicitors to the right country expert for each jurisdiction. See our network directory for country-specific expert sites.",
       "Country condition reports are typically instructed alongside persecution or human rights expert reports where the claim engages both country conditions and Convention or ECHR analysis. Early instruction allows compliance with tribunal exchange deadlines and Practice Direction 2024 report length requirements.",
     ],
@@ -18,12 +18,12 @@ export const reportTypes: ContentPage[] = [
       {
         question: "What is a country condition expert report in UK immigration?",
         answer:
-          "A country condition expert report provides independent evidence on conditions in the appellant's country of origin — security, human rights, state protection, internal relocation, and profile-specific risks. It goes beyond the Home Office CPIN by addressing the individual appellant's circumstances and current conditions not captured in generic country policy.",
+          "A country condition expert report provides independent evidence on conditions in the appellant's country of origin, security, human rights, state protection, internal relocation, and profile-specific risks. It goes beyond the Home Office CPIN by addressing the individual appellant's circumstances and current conditions not captured in generic country policy.",
       },
       {
         question: "When should I instruct a country condition expert?",
         answer:
-          "Instruct when the appellant's profile, region, or claimed fear requires analysis beyond the CPIN — clan minorities, specific persecution profiles, regional security changes, or CPIN challenge. Use /network to find the right country-specific expert.",
+          "Instruct when the appellant's profile, region, or claimed fear requires analysis beyond the CPIN, clan minorities, specific persecution profiles, regional security changes, or CPIN challenge. Use /network to find the right country-specific expert.",
       },
     ],
     relatedLinks: [
@@ -40,19 +40,19 @@ export const reportTypes: ContentPage[] = [
       "Persecution analysis expert reports for UK asylum tribunals. Refugee Convention grounds, nexus analysis, HJ (Iran) [2010], RT (Zimbabwe) [2012], and non-state actor persecution.",
     h1: "Persecution Analysis Expert Reports UK | Refugee Convention Evidence",
     content: [
-      "Persecution analysis expert reports examine whether the appellant faces a well-founded fear of persecution for a Refugee Convention reason — political opinion, religion, race, nationality, or membership of a particular social group. Experts assess Convention nexus, state protection failures, and internal relocation in the context of country conditions.",
+      "Persecution analysis expert reports examine whether the appellant faces a well-founded fear of persecution for a Refugee Convention reason, political opinion, religion, race, nationality, or membership of a particular social group. Experts assess Convention nexus, state protection failures, and internal relocation in the context of country conditions.",
       "Leading authorities including HJ (Iran) [2010] UKSC (LGBTQ+ discretion rejected), RT (Zimbabwe) [2012] UKSC (imputed political opinion), and MOJ (Somalia) [2014] UKSC (state protection methodology) inform persecution analysis. Experts apply these frameworks to the appellant's specific profile and claimed fear.",
-      "Persecution analysis is distinct from country condition reporting. While country experts assess conditions on the ground, persecution experts analyse Convention methodology, nexus, and persecution threshold. Many cases require both. Specialist persecution reports are available through persecutionexpert.com — see our network directory.",
+      "Persecution analysis is distinct from country condition reporting. While country experts assess conditions on the ground, persecution experts analyse Convention methodology, nexus, and persecution threshold. Many cases require both. Specialist persecution reports are available through persecutionexpert.com, see our network directory.",
       "Reports comply with Immigration Tribunal Practice Direction 2024, the Adam Pipe October 2025 expert report guide, and Ikarian Reefer independence principles. Experts owe a paramount duty to the tribunal, not the instructing party.",
     ],
     faqs: [
       {
         question: "What is a persecution expert report?",
         answer:
-          "A persecution expert report analyses whether the appellant faces a well-founded fear of persecution for a Refugee Convention reason — assessing nexus, state protection, and internal relocation in the context of country conditions.",
+          "A persecution expert report analyses whether the appellant faces a well-founded fear of persecution for a Refugee Convention reason, assessing nexus, state protection, and internal relocation in the context of country conditions.",
       },
       {
-        question: "Persecution expert vs country condition expert — which do I need?",
+        question: "Persecution expert vs country condition expert: which do I need?",
         answer:
           "Country condition experts assess conditions on the ground. Persecution experts analyse Convention nexus and persecution methodology. Many cases require both. See /network for persecutionexpert.com.",
       },
@@ -79,7 +79,7 @@ export const reportTypes: ContentPage[] = [
       {
         question: "When is a human rights expert report needed?",
         answer:
-          "When the claim engages ECHR Article 3 (deportation/removal), Article 8 (family/private life), or treaty standards beyond Refugee Convention persecution — torture survivors, HR defenders, arbitrary detention, extrajudicial killings.",
+          "When the claim engages ECHR Article 3 (deportation/removal), Article 8 (family/private life), or treaty standards beyond Refugee Convention persecution, torture survivors, HR defenders, arbitrary detention, extrajudicial killings.",
       },
       {
         question: "Human rights expert vs persecution expert?",
@@ -109,7 +109,7 @@ export const reportTypes: ContentPage[] = [
       {
         question: "Can an expert report challenge the Home Office CPIN?",
         answer:
-          "Yes — expert reports routinely go beyond and challenge CPIN findings where dated, incomplete, or not addressing the appellant's specific profile. Country Guidance cases take precedence over CPINs where they conflict.",
+          "Yes, expert reports routinely go beyond and challenge CPIN findings where dated, incomplete, or not addressing the appellant's specific profile. Country Guidance cases take precedence over CPINs where they conflict.",
       },
       {
         question: "What makes a CPIN challenge report effective?",
@@ -133,13 +133,13 @@ export const reportTypes: ContentPage[] = [
       "Internal relocation expert reports assess whether internal relocation within the country of origin is viable and reasonable as an alternative to international protection. The analysis has two limbs: viability (no real risk of persecution or serious harm at the proposed destination) and reasonableness (relocation would not be unduly harsh).",
       "Experts apply UNHCR and tribunal standards to assess security at the proposed relocation destination, clan and family connections, economic subsistence, gender-specific barriers, and whether relocation would expose the appellant to renewed persecution or serious harm.",
       "Internal relocation is frequently raised by the Home Office in refusal letters and must be addressed where relevant. Dedicated internal relocation analysis may be instructed separately in complex cases, or integrated into country condition reports where the respondent raises internal flight alternatives.",
-      "Profile-specific analysis is essential — generic country-level conclusions on internal relocation are rarely sufficient for tribunal proceedings. Experts must identify assumptions about the proposed destination and alternative hypotheses.",
+      "Profile-specific analysis is essential: generic country-level conclusions on internal relocation are rarely sufficient for tribunal proceedings. Experts must identify assumptions about the proposed destination and alternative hypotheses.",
     ],
     faqs: [
       {
         question: "What does an internal relocation expert report assess?",
         answer:
-          "Whether internal relocation is viable and reasonable — assessing security at the proposed destination, clan/economic support, gender-specific barriers, and whether relocation would expose the appellant to risk of persecution or serious harm.",
+          "Whether internal relocation is viable and reasonable, assessing security at the proposed destination, clan/economic support, gender-specific barriers, and whether relocation would expose the appellant to risk of persecution or serious harm.",
       },
       {
         question: "Is internal relocation always addressed in country condition reports?",
@@ -161,7 +161,7 @@ export const reportTypes: ContentPage[] = [
     h1: "Linguistic & Clan Identity Expert Reports UK | Asylum Evidence",
     content: [
       "Linguistic and clan identity expert reports address disputed nationality, regional origin, or clan membership in asylum cases. Experts conduct dialect analysis, assess cultural knowledge and consistency with the claimed background, and evaluate plausibility of clan affiliation claims.",
-      "These reports are instructed where the Home Office disputes the appellant's claimed identity — for example, nationality, ethnic group, clan structure, or regional origin. Dialect analysis and cultural knowledge testing can support or challenge credibility findings on identity.",
+      "These reports are instructed where the Home Office disputes the appellant's claimed identity, for example, nationality, ethnic group, clan structure, or regional origin. Dialect analysis and cultural knowledge testing can support or challenge credibility findings on identity.",
       "Experienced country experts often assess clan plausibility as part of country condition reports. Dedicated linguistic or clan identity experts may be instructed where identity is the primary disputed issue, or where Single Joint Expert directions require independent linguistic analysis.",
       "Experts must maintain independence under Ikarian Reefer principles and clearly distinguish between assumed facts (as instructed) and expert opinion on identity plausibility. Practice Direction 2024 compliance applies to all expert reports in immigration proceedings.",
     ],
@@ -169,7 +169,7 @@ export const reportTypes: ContentPage[] = [
       {
         question: "When is a linguistic expert needed in asylum cases?",
         answer:
-          "Where the appellant's claimed nationality, region, or clan identity is disputed — dialect analysis, cultural knowledge, and consistency with documented background. Often instructed alongside country condition experts for clan structure cases.",
+          "Where the appellant's claimed nationality, region, or clan identity is disputed, dialect analysis, cultural knowledge, and consistency with documented background. Often instructed alongside country condition experts for clan structure cases.",
       },
       {
         question: "Can a country expert assess clan membership?",
@@ -190,16 +190,16 @@ export const reportTypes: ContentPage[] = [
       "Signposting guide for medical and psychiatric expert evidence in UK immigration tribunals. Paposhvili [2017], Savran [2021], and when to instruct alongside country experts.",
     h1: "Medical & Psychiatric Expert Reports | Immigration Tribunal (Signposting)",
     content: [
-      "Medical and psychiatric expert evidence is distinct from country condition, persecution, and human rights expert reports. This page signposts the distinction — immigrationexpertreports.com does not instruct or provide medical expert services.",
+      "Medical and psychiatric expert evidence is distinct from country condition, persecution, and human rights expert reports. This page signposts the distinction: immigrationexpertreports.com does not instruct or provide medical expert services.",
       "Article 3 medical deportation cases engage authorities including Paposhvili [2017] CJEU and Savran [2021] UKSC. Medical evidence on treatment availability, clinical prognosis, and care standards in the country of origin is essential where the claim turns on medical risk on return.",
-      "Country and human rights experts address conditions, state healthcare infrastructure, and policy — not clinical assessment of the appellant's medical condition. Solicitors should instruct medical experts through specialist medico-legal providers alongside country or human rights experts where both dimensions are engaged.",
+      "Country and human rights experts address conditions, state healthcare infrastructure, and policy, not clinical assessment of the appellant's medical condition. Solicitors should instruct medical experts through specialist medico-legal providers alongside country or human rights experts where both dimensions are engaged.",
       "Where a case involves torture survivors or PTSD, psychiatric evidence may support credibility and Article 3 analysis but does not replace country condition evidence on return risk. Coordinate instruction timelines to meet tribunal exchange deadlines.",
     ],
     faqs: [
       {
         question: "Do I need a medical expert alongside a country expert?",
         answer:
-          "In Article 3 medical/deportation cases (Paposhvili, Savran), medical evidence on treatment availability in the country of origin is essential. This is separate from country condition analysis — instruct both where engaged.",
+          "In Article 3 medical/deportation cases (Paposhvili, Savran), medical evidence on treatment availability in the country of origin is essential. This is separate from country condition analysis, instruct both where engaged.",
       },
       {
         question: "Where do I find medical experts for immigration cases?",

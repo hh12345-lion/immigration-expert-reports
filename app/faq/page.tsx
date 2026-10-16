@@ -3,11 +3,12 @@ import { FAQSection } from "@/components/ui/FAQSection";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { faqs } from "@/data/faq";
+import { sectionPhotos } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Immigration Expert Reports FAQ | UK Tribunal Evidence",
   description:
-    "Frequently asked questions about immigration expert reports — Practice Direction 2024, Adam Pipe 2025, Legal Aid, CPIN challenges, report types, and network sites.",
+    "Frequently asked questions about immigration expert reports, Practice Direction 2024, Adam Pipe 2025, Legal Aid, CPIN challenges, report types, and network sites.",
   path: "/faq",
 });
 
@@ -17,7 +18,7 @@ export default function FaqPage() {
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} faqs={faqs} />
-      <PageShell
+      <PageShell photo={sectionPhotos.faq}
         title="Frequently Asked Questions"
         subtitle="Common questions from UK immigration solicitors instructing expert evidence."
         breadcrumbs={crumbs}

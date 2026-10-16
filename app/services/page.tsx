@@ -6,11 +6,12 @@ import { createMetadata } from "@/lib/metadata";
 import { servicesCatalogSchema } from "@/lib/schema";
 import { SITE_SCOPE_LINE } from "@/lib/constants";
 import { services } from "@/data/services";
+import { sectionPhotos } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Immigration Expert Report Services UK | Tribunal Evidence",
   description:
-    "Immigration expert report services for UK tribunals — country condition, persecution analysis, human rights, CPIN challenge, internal relocation, linguistic identity, QA review, and oral evidence.",
+    "Immigration expert report services for UK tribunals, country condition, persecution analysis, human rights, CPIN challenge, internal relocation, linguistic identity, QA review, and oral evidence.",
   path: "/services",
 });
 
@@ -25,20 +26,20 @@ export default function ServicesPage() {
           services.map((s) => ({ slug: s.slug, title: s.title, description: s.description }))
         )}
       />
-      <PageShell
+      <PageShell photo={sectionPhotos.services}
         title="Immigration Expert Report Services"
         subtitle="Eight core services for UK immigration and asylum tribunal proceedings."
         breadcrumbs={crumbs}
       >
-        <p className="mb-4 text-[#3E4450] leading-relaxed">
+        <p className="mb-4 text-[#36404D] leading-relaxed">
           Each service maps to a report type in our network taxonomy. Country-specific instruction is routed to
           specialist network sites via our{" "}
-          <Link href="/network" className="text-[#2557D6] hover:underline">
+          <Link href="/network" className="text-[#0458DE] hover:underline">
             network directory
           </Link>
           . Report standards and tribunal compliance apply across all services in the United Kingdom.
         </p>
-        <p className="mb-8 text-sm text-[#3E4450]/90 leading-relaxed">{SITE_SCOPE_LINE}</p>
+        <p className="mb-8 text-sm text-[#36404D]/90 leading-relaxed">{SITE_SCOPE_LINE}</p>
         <CardGrid
           items={services.map((s) => ({
             title: s.title,
@@ -47,10 +48,10 @@ export default function ServicesPage() {
           }))}
         />
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/contact" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#0458DE] hover:underline">
             Request an expert report
           </Link>
-          <Link href="/how-to-instruct" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/how-to-instruct" className="font-semibold text-[#0458DE] hover:underline">
             Fees & Legal Aid
           </Link>
         </div>

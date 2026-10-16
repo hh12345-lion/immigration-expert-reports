@@ -4,6 +4,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { SITE_EMAIL, SITE_SCOPE_LINE } from "@/lib/constants";
+import { sectionPhotos } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Contact | Request an Immigration Expert Report",
@@ -20,7 +21,7 @@ export default function ContactPage() {
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} />
-      <PageShell
+      <PageShell photo={sectionPhotos.contact}
         title="Instruct in four fields"
         subtitle="Name, firm, email, and a short case note. We match the right network specialist for UK tribunal proceedings."
         breadcrumbs={crumbs}

@@ -1,34 +1,35 @@
 import Link from "next/link";
+import { Mark } from "@/components/brand/Brand";
 
 export function CTASection({
   title = "Ready to instruct an expert?",
-  description = "Send a short case note — country, proceeding stage, and report type. We route to the right network specialist for UK tribunal work.",
+  description = "Send a short case note with the country, proceeding stage and report type. We route it to the right network specialist for UK tribunal work.",
 }: {
   title?: string;
   description?: string;
 }) {
   return (
-    <section className="bg-surface py-12 sm:py-14 md:py-16">
-      <div className="mx-auto min-w-0 max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[6px] border border-border bg-paper px-6 py-8 sm:px-8 sm:py-10 md:flex md:items-end md:justify-between md:gap-12">
-          <div>
-            <h2 className="font-display text-xl font-semibold text-ink sm:text-2xl md:text-3xl">{title}</h2>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-body sm:text-base">{description}</p>
-          </div>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-0">
-            <Link
-              href="/contact"
-              className="font-display inline-flex min-h-[44px] items-center justify-center rounded-[6px] bg-signal px-6 py-3 text-sm font-semibold text-white hover:bg-signal-hover"
-            >
-              Contact
-            </Link>
-            <Link
-              href="/how-to-instruct"
-              className="font-display inline-flex min-h-[44px] items-center justify-center rounded-[6px] border border-ink/20 px-6 py-3 text-sm font-semibold text-ink hover:border-signal hover:text-signal"
-            >
-              Instruct guide
-            </Link>
-          </div>
+    <section className="relative overflow-hidden bg-navy py-16 sm:py-20">
+      <span aria-hidden className="absolute inset-x-0 top-0 h-1.5 bg-orange" />
+      <Mark className="pointer-events-none absolute -bottom-20 right-0 h-96 w-auto opacity-[0.1]" orange="#F4F2EC" blue="#F4F2EC" base="#F4F2EC" />
+      <div className="relative mx-auto flex min-w-0 max-w-6xl flex-col gap-8 px-4 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
+        <div className="max-w-2xl">
+          <h2 className="font-display text-3xl text-cream sm:text-[2.6rem] sm:leading-tight">{title}</h2>
+          <p className="mt-4 text-lg leading-relaxed text-cream/75">{description}</p>
+        </div>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Link
+            href="/contact"
+            className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-blue px-7 font-bold text-white transition hover:bg-orange"
+          >
+            Contact us
+          </Link>
+          <Link
+            href="/how-to-instruct"
+            className="inline-flex min-h-[48px] items-center justify-center rounded-full border-2 border-cream/40 px-7 font-bold text-cream transition hover:bg-cream/10"
+          >
+            How to instruct
+          </Link>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
+import { sectionPhotos } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "How to Instruct an Immigration Expert | UK Solicitors Guide",
@@ -13,7 +14,7 @@ export const metadata = createMetadata({
 const sections = [
   {
     title: "Step 1: Identify the report type",
-    body: "Review the refusal grounds and identify which expert report type is required — country condition, persecution analysis, human rights, CPIN challenge, internal relocation, or linguistic identity. Use our report types hub and network directory to route instruction to the right specialist.",
+    body: "Review the refusal grounds and identify which expert report type is required, country condition, persecution analysis, human rights, CPIN challenge, internal relocation, or linguistic identity. Use our report types hub and network directory to route instruction to the right specialist.",
   },
   {
     title: "Step 2: Select the network site",
@@ -47,25 +48,25 @@ export default function HowToInstructPage() {
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} />
-      <PageShell
+      <PageShell photo={sectionPhotos.howToInstruct}
         title="How to Instruct an Immigration Expert"
         subtitle="A step-by-step guide for UK immigration solicitors, barristers, and Legal Aid practitioners."
         breadcrumbs={crumbs}
       >
         {sections.map((section, i) => (
           <div key={i} className="mb-8">
-            <h2 className="text-xl font-bold text-[#1B2430]">{section.title}</h2>
-            <p className="mt-3 text-[#3E4450] leading-relaxed">{section.body}</p>
+            <h2 className="text-xl font-bold text-[#192431]">{section.title}</h2>
+            <p className="mt-3 text-[#36404D] leading-relaxed">{section.body}</p>
           </div>
         ))}
         <div className="mt-6 flex flex-wrap gap-4">
-          <Link href="/guides/letter-of-instruction-guide" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/guides/letter-of-instruction-guide" className="font-semibold text-[#0458DE] hover:underline">
             Letter of instruction guide
           </Link>
-          <Link href="/guides/instructing-expert-legal-aid" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/guides/instructing-expert-legal-aid" className="font-semibold text-[#0458DE] hover:underline">
             Legal Aid instruction guide
           </Link>
-          <Link href="/contact" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#0458DE] hover:underline">
             Request an expert report
           </Link>
         </div>

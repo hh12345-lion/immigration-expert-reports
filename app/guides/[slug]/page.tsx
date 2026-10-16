@@ -6,10 +6,7 @@ import { createMetadata } from "@/lib/metadata";
 import { articleSchema } from "@/lib/schema";
 import { guides, getGuide } from "@/data/guides";
 import { getGuideRelatedLinks } from "@/data/related-links";
-
-export function generateStaticParams() {
-  return guides.map((g) => ({ slug: g.slug }));
-}
+import { photoFor } from "@/lib/page-photos";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -45,19 +42,19 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           path: `/guides/${slug}`,
         })}
       />
-      <PageShell title={guide.h1} breadcrumbs={crumbs}>
+      <PageShell photo={photoFor(slug)} title={guide.h1} breadcrumbs={crumbs}>
         {guide.content.map((p, i) => (
-          <p key={i} className="mb-4 text-[#3E4450] leading-relaxed">
+          <p key={i} className="mb-4 text-[#36404D] leading-relaxed">
             {p}
           </p>
         ))}
         {relatedLinks.length > 0 && (
           <>
-            <h2 className="mt-8 text-xl font-bold text-[#1B2430]">Related Resources</h2>
+            <h2 className="mt-8 text-xl font-bold text-[#192431]">Related Resources</h2>
             <ul className="mt-4 space-y-2">
               {relatedLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-[#2557D6] hover:underline">
+                  <Link href={link.href} className="text-[#0458DE] hover:underline">
                     {link.label}
                   </Link>
                 </li>
@@ -66,7 +63,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           </>
         )}
         <div className="mt-10">
-          <Link href="/guides" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/guides" className="font-semibold text-[#0458DE] hover:underline">
             ← Back to Guides
           </Link>
         </div>

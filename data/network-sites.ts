@@ -13,7 +13,7 @@ export const networkSites: NetworkSite[] = [
     url: "https://www.persecutionexpert.com",
     role: "Refugee Convention persecution grounds",
     description:
-      "Thematic persecution analysis across all Convention grounds — political opinion, religion, race, nationality, and particular social group. Complements country condition reports where nexus and persecution methodology are contested.",
+      "Thematic persecution analysis across all Convention grounds, political opinion, religion, race, nationality, and particular social group. Complements country condition reports where nexus and persecution methodology are contested.",
     anchorText: "Persecution expert reports UK",
     reportTypeHref: "/report-types/persecution-analysis-reports",
   },

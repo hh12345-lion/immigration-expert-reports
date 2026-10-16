@@ -10,15 +10,15 @@ export const tribunalProcesses: ContentPage[] = [
     h1: "Expert Reports in FTT Asylum Appeals | First-Tier Tribunal Guide",
     content: [
       "The First-tier Tribunal (Immigration and Asylum Chamber) is the primary forum for asylum appeals against Home Office refusals. Expert reports provide independent evidence on country conditions, persecution, human rights violations, and return risk that tribunals require to determine appeals fairly.",
-      "Expert evidence must comply with tribunal directions on exchange deadlines. Late reports risk refusal under Rule 15 or reduced weight at the tribunal's discretion. Solicitors should instruct experts early in the appeal process — standard turnaround is typically 2 to 3 weeks for a focused report.",
+      "Expert evidence must comply with tribunal directions on exchange deadlines. Late reports risk refusal under Rule 15 or reduced weight at the tribunal's discretion. Solicitors should instruct experts early in the appeal process, standard turnaround is typically 2 to 3 weeks for a focused report.",
       "FTT expert reports must comply with Immigration Tribunal Practice Direction 2024 (default 20-page limit unless permission granted), the Adam Pipe October 2025 expert report guide, and Ikarian Reefer independence principles. Reports should include a statement of truth, dated source list, and clearly numbered responses to the letter of instruction.",
-      "Bundle requirements vary by tribunal centre and judge. Expert reports should be paginated, referenced in the appeal bundle index, and exchanged in accordance with tribunal directions. Rule 15 governs late evidence — experts should flag feasibility immediately when instructions are received close to deadlines.",
+      "Bundle requirements vary by tribunal centre and judge. Expert reports should be paginated, referenced in the appeal bundle index, and exchanged in accordance with tribunal directions. Rule 15 governs late evidence: experts should flag feasibility immediately when instructions are received close to deadlines.",
     ],
     faqs: [
       {
         question: "When should expert evidence be exchanged in FTT asylum appeals?",
         answer:
-          "Expert reports must comply with tribunal directions on exchange deadlines. Late reports risk refusal under Rule 15. Instruct experts early in the appeal process — standard turnaround is 2–3 weeks.",
+          "Expert reports must comply with tribunal directions on exchange deadlines. Late reports risk refusal under Rule 15. Instruct experts early in the appeal process, standard turnaround is 2–3 weeks.",
       },
       {
         question: "What format should FTT expert reports follow?",
@@ -42,7 +42,7 @@ export const tribunalProcesses: ContentPage[] = [
       "Upper Tribunal (Immigration and Asylum Chamber) appeals involve complex legal issues, country guidance challenges, and precedent-setting decisions. Expert evidence in UT cases often requires deeper analysis addressing the country guidance framework and authoritative sources.",
       "UT cases may engage country guidance challenges where the expert must apply binding CG precedent to the appellant's profile. Reports must cite authoritative sources, address CG methodology, and comply with Practice Direction 2024 and Adam Pipe 2025 requirements.",
       "Fresh expert evidence in UT appeals requires permission and must be justified under UT rules. Late evidence rules apply with heightened scrutiny. Solicitors should obtain counsel's advice on expert strategy before instruction in UT proceedings.",
-      "UT decisions on country guidance have binding precedent value for future FTT decisions. Expert evidence quality and independence are scrutinised closely in CG cases — reports must meet the highest evidential standards.",
+      "UT decisions on country guidance have binding precedent value for future FTT decisions. Expert evidence quality and independence are scrutinised closely in CG cases, reports must meet the highest evidential standards.",
     ],
     faqs: [
       {
@@ -53,7 +53,7 @@ export const tribunalProcesses: ContentPage[] = [
       {
         question: "Can new expert evidence be adduced in the Upper Tribunal?",
         answer:
-          "Subject to UT rules and directions. Fresh expert evidence in UT appeals requires permission and must be justified — late evidence rules apply with heightened scrutiny.",
+          "Subject to UT rules and directions. Fresh expert evidence in UT appeals requires permission and must be justified, late evidence rules apply with heightened scrutiny.",
       },
     ],
     relatedLinks: [
@@ -70,7 +70,7 @@ export const tribunalProcesses: ContentPage[] = [
     h1: "Single Joint Experts in Immigration Cases | SJE Guide",
     content: [
       "Single Joint Experts (SJEs) are instructed jointly by both parties to provide independent expert evidence on a specific issue. SJEs are less common in asylum proceedings than in commercial courts but tribunals may direct joint instruction on narrow issues such as linguistic analysis or specific country conditions.",
-      "Experts instructed as SJEs must maintain independence and document instructions received from both parties. The expert owes a paramount duty to the tribunal under Ikarian Reefer principles — not to either instructing party.",
+      "Experts instructed as SJEs must maintain independence and document instructions received from both parties. The expert owes a paramount duty to the tribunal under Ikarian Reefer principles, not to either instructing party.",
       "Fee sharing is typically directed by the tribunal or agreed between parties. LAA prior authority is required for legally aided cases before the expert begins work. Scope, questions, and materials must be agreed before instruction.",
       "SJE directions require careful case management. Solicitors should agree the letter of instruction, documents to be provided, and timetable with the opposing party before approaching the expert. See CPR Part 35 principles applied by analogy in tribunal proceedings.",
     ],
@@ -101,7 +101,7 @@ export const tribunalProcesses: ContentPage[] = [
     content: [
       "Hot-tubbing (concurrent evidence) is a procedure where experts give evidence simultaneously and may question each other, directed by the tribunal. The aim is to resolve expert disputes efficiently and identify agreed facts and genuine areas of disagreement.",
       "Tribunals increasingly direct hot-tubbing in complex multi-expert cases where country condition, persecution, and human rights experts disagree on key issues. Experts must prepare joint statements identifying agreed facts and disputed issues before the hearing.",
-      "Hot-tubbing is not negotiation — experts must maintain independence throughout concurrent evidence. The expert's duty to assist the tribunal remains paramount. Experts should not advocate for either party's position during concurrent evidence.",
+      "Hot-tubbing is not negotiation: experts must maintain independence throughout concurrent evidence. The expert's duty to assist the tribunal remains paramount. Experts should not advocate for either party's position during concurrent evidence.",
       "Preparation for hot-tubbing requires thorough knowledge of the opposing expert's report, clear identification of methodological differences, and willingness to concede points where the evidence supports it. Adam Pipe 2025 addresses tribunal attendance and concurrent evidence expectations.",
     ],
     faqs: [
@@ -113,7 +113,7 @@ export const tribunalProcesses: ContentPage[] = [
       {
         question: "How should experts prepare for hot-tubbing?",
         answer:
-          "Experts should prepare joint statements identifying agreed facts and disputed issues before the hearing. Maintain independence — hot-tubbing is not negotiation.",
+          "Experts should prepare joint statements identifying agreed facts and disputed issues before the hearing. Maintain independence: hot-tubbing is not negotiation.",
       },
     ],
     relatedLinks: [
@@ -129,8 +129,8 @@ export const tribunalProcesses: ContentPage[] = [
       "Late expert evidence in UK immigration tribunals. Rule 15, risk of refusal, interim opinions, staged reports, and practical remedies for solicitors.",
     h1: "Late Expert Evidence in Immigration Tribunals | Risk & Remedies",
     content: [
-      "Late expert reports risk refusal under Rule 15 or reduced weight at the tribunal's discretion. Solicitors should not assume late reports will be admitted — the tribunal has discretion but late evidence faces significant scrutiny.",
-      "Where full reports cannot meet deadlines, experts may provide focused interim opinions or staged reports — but this requires tribunal permission and early communication with the tribunal. Experts should flag feasibility immediately when instructions are received close to deadlines.",
+      "Late expert reports risk refusal under Rule 15 or reduced weight at the tribunal's discretion. Solicitors should not assume late reports will be admitted, the tribunal has discretion but late evidence faces significant scrutiny.",
+      "Where full reports cannot meet deadlines, experts may provide focused interim opinions or staged reports, but this requires tribunal permission and early communication with the tribunal. Experts should flag feasibility immediately when instructions are received close to deadlines.",
       "Practical remedies for solicitors include applying for an extension of time before the deadline, seeking directions for staged evidence, and instructing experts with realistic timelines at the earliest opportunity. Standard turnaround is 2 to 3 weeks for a focused report.",
       "Late evidence directions should explain the reason for delay, the importance of the evidence to fair determination, and any prejudice to the opposing party. Practice Direction 2024 and tribunal directions on expert evidence exchange must be followed.",
     ],
@@ -143,7 +143,7 @@ export const tribunalProcesses: ContentPage[] = [
       {
         question: "Can partial or interim expert reports be submitted?",
         answer:
-          "Where full reports cannot meet deadlines, experts may provide focused interim opinions or staged reports — but this requires tribunal permission and early communication with the tribunal.",
+          "Where full reports cannot meet deadlines, experts may provide focused interim opinions or staged reports, but this requires tribunal permission and early communication with the tribunal.",
       },
     ],
     relatedLinks: [

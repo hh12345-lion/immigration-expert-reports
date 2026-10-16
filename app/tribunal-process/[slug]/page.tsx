@@ -3,10 +3,6 @@ import { createMetadata } from "@/lib/metadata";
 import { tribunalProcesses, getTribunalProcess } from "@/data/tribunal-process";
 import { ContentPageView } from "@/components/content/ContentPageView";
 
-export function generateStaticParams() {
-  return tribunalProcesses.map((t) => ({ slug: t.slug }));
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const page = getTribunalProcess(slug);

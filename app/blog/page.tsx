@@ -5,6 +5,7 @@ import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { getAllBlogPosts } from "@/lib/blog";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import { createMetadata } from "@/lib/metadata";
+import { fallbackPhoto, sectionPhotos } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Blog | Immigration Expert Reports",
@@ -38,7 +39,7 @@ export default function BlogIndexPage() {
           })),
         }}
       />
-      <PageShell
+      <PageShell photo={sectionPhotos.blog}
         title="Immigration Expert Reports Blog"
         subtitle="Practitioner-facing articles on country evidence, immigration appeals, and instructing specialist expert reports."
         breadcrumbs={crumbs}
@@ -46,13 +47,13 @@ export default function BlogIndexPage() {
         <div className="mb-10 flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="inline-flex min-h-[48px] items-center justify-center rounded-md bg-signal px-7 text-sm font-semibold text-white hover:bg-signal-hover"
+            className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-blue px-7 font-bold text-white hover:bg-orange"
           >
-            Instruct expert
+            Instruct an expert
           </Link>
           <Link
             href="/guides"
-            className="inline-flex min-h-[48px] items-center justify-center rounded-md border border-border bg-surface px-7 text-sm font-semibold text-ink hover:border-signal hover:text-signal"
+            className="inline-flex min-h-[48px] items-center justify-center rounded-full border-2 border-ink/25 px-7 font-bold text-ink hover:border-blue hover:text-blue"
           >
             Browse guides
           </Link>
@@ -61,21 +62,21 @@ export default function BlogIndexPage() {
         {posts.length === 0 ? (
           <p className="text-body">Articles will appear here shortly.</p>
         ) : (
-          <ul className="grid gap-8 md:grid-cols-2">
+          <ul className="grid gap-x-8 gap-y-12 md:grid-cols-2">
             {posts.map((post) => (
-              <li key={post.slug} className="overflow-hidden rounded-md border border-border bg-surface">
-                {post.image ? (
-                  <Link href={`/blog/${post.slug}`} className="relative block h-52 w-full">
+              <li key={post.slug} className="group">
+                {(
+                  <Link href={`/blog/${post.slug}`} className="swoosh-sm relative block aspect-[16/10] w-full overflow-hidden bg-section-alt">
                     <Image
-                      src={post.image}
-                      alt={post.imageAlt || post.title}
+                      src={post.image || fallbackPhoto(post.slug).src}
+                      alt={post.image ? post.imageAlt || post.title : fallbackPhoto(post.slug).alt}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
                     />
                   </Link>
-                ) : null}
-                <div className="p-6">
+                )}
+                <div className="pt-5">
                   <p className="text-[11px] font-semibold uppercase tracking-widest text-muted">
                     <time dateTime={post.updated || post.date}>
                       {new Date(post.updated || post.date).toLocaleDateString("en-GB", {
@@ -98,7 +99,7 @@ export default function BlogIndexPage() {
                       href={`/blog/${post.slug}`}
                       className="text-sm font-semibold text-signal hover:text-signal-hover"
                     >
-                      Read article →
+                      Read article
                     </Link>
                   </p>
                 </div>

@@ -35,7 +35,7 @@ export const CORE_LINKS = {
   tribunal: { label: "Tribunal process", href: "/tribunal-process" } satisfies RelatedLink,
 };
 
-/** Homepage Rule D — paths that must appear on `/` */
+/** Homepage Rule D: paths that must appear on `/` */
 export const HOMEPAGE_REQUIRED_PATHS = [
   "/contact",
   "/how-to-instruct",

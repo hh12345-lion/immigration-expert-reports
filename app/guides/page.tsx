@@ -4,11 +4,12 @@ import { CardGrid } from "@/components/ui/CardGrid";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { guides } from "@/data/guides";
+import { sectionPhotos } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Immigration Expert Report Guides for Solicitors | UK Tribunal",
   description:
-    "Solicitor guides on immigration expert reports — standards, Legal Aid instruction, letters of instruction, CPIN vs Country Guidance, and CPR Part 35.",
+    "Solicitor guides on immigration expert reports: standards, Legal Aid instruction, letters of instruction, CPIN vs Country Guidance, and CPR Part 35.",
   path: "/guides",
 });
 
@@ -18,7 +19,7 @@ export default function GuidesPage() {
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} />
-      <PageShell
+      <PageShell photo={sectionPhotos.guides}
         title="Solicitor Guides: Immigration Expert Reports"
         subtitle="Practical guides for instructing compliant expert evidence in UK immigration tribunal proceedings."
         breadcrumbs={crumbs}
@@ -31,19 +32,19 @@ export default function GuidesPage() {
           }))}
         />
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/report-standards" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/report-standards" className="font-semibold text-[#0458DE] hover:underline">
             Full report standards pillar page
           </Link>
-          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/cpin-and-country-guidance" className="font-semibold text-[#0458DE] hover:underline">
             CPIN & Country Guidance
           </Link>
-          <Link href="/network" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/network" className="font-semibold text-[#0458DE] hover:underline">
             Network directory
           </Link>
-          <Link href="/how-to-instruct" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/how-to-instruct" className="font-semibold text-[#0458DE] hover:underline">
             How to instruct
           </Link>
-          <Link href="/contact" className="font-semibold text-[#2557D6] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#0458DE] hover:underline">
             Contact us
           </Link>
         </div>

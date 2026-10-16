@@ -3,10 +3,6 @@ import { createMetadata } from "@/lib/metadata";
 import { reportTypes, getReportType } from "@/data/report-types";
 import { ContentPageView } from "@/components/content/ContentPageView";
 
-export function generateStaticParams() {
-  return reportTypes.map((r) => ({ slug: r.slug }));
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const page = getReportType(slug);
@@ -21,27 +17,27 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 function PersecutionGeoSections() {
   return (
     <>
-      <h2 id="hj-iran" className="mt-10 scroll-mt-24 text-xl font-bold text-[#1B2430]">
-        HJ (Iran) [2010] UKSC — Four-Stage Test (LGBTQ+ Asylum)
+      <h2 id="hj-iran" className="mt-10 scroll-mt-24 text-xl font-bold text-[#192431]">
+        HJ (Iran) [2010] UKSC: Four-Stage Test (LGBTQ+ Asylum)
       </h2>
-      <p className="mt-4 text-[#3E4450] leading-relaxed">
+      <p className="mt-4 text-[#36404D] leading-relaxed">
         The Supreme Court in <em>HJ (Iran)</em> [2010] UKSC 31 rejected the requirement that LGBTQ+ asylum claimants
         conceal their sexuality to avoid persecution. Expert reports addressing sexuality-based persecution in UK
         tribunals should apply this framework:
       </p>
-      <ol className="mt-4 list-decimal space-y-2 pl-6 text-[#3E4450] leading-relaxed">
+      <ol className="mt-4 list-decimal space-y-2 pl-6 text-[#36404D] leading-relaxed">
         <li>Is the claimant gay (or perceived as gay)?</li>
         <li>Do they have to conceal their sexuality to avoid persecution?</li>
         <li>Would concealment be reasonably tolerable?</li>
         <li>If not, is there a real risk of persecution?</li>
       </ol>
 
-      <h2 id="rt-zimbabwe" className="mt-10 scroll-mt-24 text-xl font-bold text-[#1B2430]">
-        RT (Zimbabwe) [2012] UKSC — Imputed Political Opinion
+      <h2 id="rt-zimbabwe" className="mt-10 scroll-mt-24 text-xl font-bold text-[#192431]">
+        RT (Zimbabwe) [2012] UKSC: Imputed Political Opinion
       </h2>
-      <p className="mt-4 text-[#3E4450] leading-relaxed">
+      <p className="mt-4 text-[#36404D] leading-relaxed">
         In <em>RT (Zimbabwe)</em> [2012] UKSC 38, the Supreme Court held that political opinion may be imputed to a
-        claimant by persecutors — a person may be at risk for perceived opposition to the government even without
+        claimant by persecutors, a person may be at risk for perceived opposition to the government even without
         actual political activity. Expert persecution analysis for UK tribunals should address whether state or
         non-state actors would impute dissenting political opinion to the appellant&apos;s profile, including family
         associations, region, or past conduct.
